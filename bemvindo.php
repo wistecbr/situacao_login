@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./assests/css/reset.css">
     <link rel="stylesheet" href="./assests/css/stilo.css">
     <script src="./assests/js/script.js" defer></script>
-    <title>Cadastrar Carro</title>
+    <title>Bem vindo</title>
 </head>
 
 <body>
@@ -29,7 +29,6 @@
     </header>
     <main>
 
-
         <?php
 
         if ($user !== '') {
@@ -37,9 +36,6 @@
             echo '<h2>'.$user.'</h2>';
         }
         ?>
-
-
-
 
     </main>
     <footer>
