@@ -21,7 +21,7 @@ Na valida.php deverá verificar o login, password e consultar no banco de dados 
 
 _Obs.:lembrando que o password deverá ser convertido para md5._
 
-Caso o login e password estejam corretos redirecionar o usuário para a página `bemvindo.php` e em caso de erro redirecionar para página de `login.php?error=`contatenado com uma mensagem de error.
+Caso o login e password estejam corretos redirecionar o usuário para a página `bemvindo.php` e em caso de erro redirecionar para página de `login.php?error=` concatenado com uma mensagem de error.
 
 ## 3)
 
