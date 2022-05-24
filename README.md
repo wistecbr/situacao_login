@@ -18,11 +18,18 @@ Em seguida o aluno deverá resolver a situação da seguinte maneira
 Será necessário construir um banco de dados e uma tabela com nome `users`
 
 a tabela deverá conter as seguites colunas 
-* 1) id: chave primária, inteiro
-* 2) login: varchar(50)
-* 3) password: varchar(50)
-* 4) nome: varchar(100)
-* 5) tipo: inteiro
+* 1) *id:* chave primária, inteiro, AUTO_INCREMENT
+* 2) *login:* varchar(50)
+* 3) *password:* varchar(100)
+* 4) *nome:* varchar(100)
+* 5) *tipo:* inteiro
+
+Após criada a tabela utilizar o seguinte comando SQL:
+
+``` SQL
+INSERT INTO users (login, password, nome, tipo) VALUES ('admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrador', 1);
+```
+
 
 ## 2) 
 A página de login enviar uma requisição `POST` para `lib\valida.php`
@@ -30,7 +37,7 @@ Na valida.php deverá verificar o login, password e consultar no banco de dados 
 
 _Obs.: lembrando que o password deverá ser convertido para `md5`._
 
-Caso o login e password estejam corretos redirecionar o usuário para a página `bemvindo.php` e em caso de erro redirecionar para página de `login.php?error=` concatenado com uma mensagem de error.
+Caso o login e password estejam corretos redirecionar o usuário para a página `bemvindo.php` e em caso de erro redirecionar para página de `login.php?error=`contatenado com uma mensagem de error.
 
 ## 3)
 
