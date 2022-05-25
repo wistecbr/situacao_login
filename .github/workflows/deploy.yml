@@ -26,7 +26,7 @@ jobs:
       run: echo DATABASE='"${{secrets.db_database}}"' >> .env
     
     - name: Extract branch name
-       run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/})"
+      run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/})"
 
     - name: Get branch name
       run: echo 'The branch name is' $BRANCH_NAME
