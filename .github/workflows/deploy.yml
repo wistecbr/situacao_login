@@ -11,4 +11,6 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
+
+    - name: 🚚 Create .env
       run: echo HOST=${{secrets.db_host}} | ls
