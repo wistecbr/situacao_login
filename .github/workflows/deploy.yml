@@ -7,6 +7,14 @@ on:
   push:
     branches:
       - main
+      - bianca
+      - claudia
+      - luiza
+      - develop
+      - mariani
+      - savio
+      - pedro
+      - wisley
   
 
 jobs:
