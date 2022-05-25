@@ -13,4 +13,4 @@ jobs:
       uses: actions/checkout@v3
 
     - name: 🚚 Create .env
-      run: echo HOST=${{secrets.db_host}} | ls
+      run: echo HOST=${{secrets.db_host}} > .env| ls
