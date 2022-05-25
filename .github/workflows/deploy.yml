@@ -12,8 +12,18 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
 
-    - name: 🚚 Create .env
-      run: echo HOST='"${{secrets.db_host}}"' USER='"${{secrets.db_user}}"' PASSWORD='"${{secrets.db_pass}}"' DATABASE='"${{secrets.db_database}}"' > .env
+    - name: 🚚 Create .env and HOST
+      run: echo HOST='"${{secrets.db_host}}"' > .env
+
+    - name: 🚚 Set User .env
+      run: echo USER='"${{secrets.db_user}}"' >> .env
+
+    - name: 🚚 Set Pass .env
+      run: echo PASSWORD='"${{secrets.db_pass}}"' >> .env
+
+    - name: 🚚 Set DataBase .env
+      run: echo DATABASE='"${{secrets.db_database}}"' >> .env
+    
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
