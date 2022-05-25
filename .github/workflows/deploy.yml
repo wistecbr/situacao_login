@@ -13,8 +13,12 @@ jobs:
       uses: actions/checkout@v3
 
     - name: 🚚 Create .env
-      run: echo HOST='"${{secrets.db_host}}"' > .env
-
-    - name: List files .env
-      run: ls -la
+      run: echo HOST='"${{secrets.db_host}}"' USER='"${{secrets.db_user}}"' PASSWORD= '"${{secrets.db_pass}}"' DATABASE= '"${{secrets.db_database}}"' > .env
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.2.0
+      with:
+        server: ${{ secrets.ftp_host }}
+        username: ${{ secrets.ftp_user }}
+        password: ${{ secrets.ftp_pass }}
+        server-dir : htdocs/main/
 
