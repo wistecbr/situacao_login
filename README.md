@@ -11,6 +11,9 @@ Cada aluno terá uma branch especifica com seu nome, caso não tenha a sua criad
 4) Alterar os `title` das páginas `login.php` e `bemvindo.php`
 5) Realizar `commit` com as alterações na sua respectiva branch 
 
+6) Crie um [Pull Request](https://github.com/wistech7l/situacao_login/compare) da sua branch para `main`
+`base:main` <- `compare: sua_branch`
+
 
 Em seguida o aluno deverá resolver a situação da seguinte maneira
 
@@ -44,6 +47,9 @@ Caso o login e password estejam corretos redirecionar o usuário para a página 
 Criar as configurações do banco de dados utilizando o arquivo `.env` para conectar ao banco de dados. 
 
 ## 4) TESTES
+
+Veifique se já contem a PR da sua branch 
+_item 6_ da [lista](https://github.com/wistech7l/situacao_login#iniciando) 
 
 Para testar se está tudo ok, basta realizar o commit na sua branch verificar se houve o deploy completo
 no [GitHub Actions](https://github.com/wistech7l/situacao_login/actions).
