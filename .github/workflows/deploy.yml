@@ -44,8 +44,6 @@ jobs:
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
-        env: 
-          LOCAL_DIR: ${{steps.set_local_dir.outputs.name}}
         with:
           server: ${{ secrets.ftp_host }}
           username: ${{ secrets.ftp_user }}
