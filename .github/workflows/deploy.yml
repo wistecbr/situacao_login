@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - develop
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -30,5 +31,5 @@ jobs:
         server: ${{ secrets.ftp_host }}
         username: ${{ secrets.ftp_user }}
         password: ${{ secrets.ftp_pass }}
-        server-dir : htdocs/main/
+        server-dir : htdocs/${GITHUB_REF#refs/heads/}/
 
