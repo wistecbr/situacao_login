@@ -4,7 +4,6 @@
         $user = $_GET['username'];
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>

@@ -5,7 +5,6 @@
     if (isset($_GET) && isset($_GET['error'])) {
         $msgErr = $_GET['error'];
     }
-
         include './lib/valida.php';
     if(isset($_POST['username']) && isset($_POST['password'])){
         $user = htmlspecialchars($_POST['username']);
