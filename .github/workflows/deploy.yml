@@ -35,7 +35,7 @@ jobs:
         id: set_local_dir
         env:
           BRANCH_NAME: ${{steps.extract_branch.outputs.name}}
-        run: echo "::set-output name=name::$BRANCH_NAME"
+        run: echo "::set-output name=name::htdocs/$BRANCH_NAME/"
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
