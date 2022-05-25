@@ -26,12 +26,14 @@ jobs:
       run: echo DATABASE='"${{secrets.db_database}}"' >> .env
     
     - name: Extract branch name
+      shell: bash
       run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/})"
 
     - name: Get branch name
       run: echo 'The branch name is' $BRANCH_NAME
 
     - name: Extract branch name
+      shell: bash
       run: echo "::set-env name=LOCAL_DIR::$(echo  htdocs/$BRANCH_NAME/)"
 
     - name: Get branch name
