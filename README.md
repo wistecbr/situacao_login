@@ -43,6 +43,16 @@ Caso o login e password estejam corretos redirecionar o usuário para a página 
 
 Criar as configurações do banco de dados utilizando o arquivo `.env` para conectar ao banco de dados. 
 
+## 4) TESTES
+
+Para testar se está tudo ok, basta realizar o commit na sua branch verificar se houve o deploy completo
+no [GitHub Actions](https://github.com/wistech7l/situacao_login/actions).
+
+Em seguida depois acessar: 
+`http://wistech.epizy.com/<sua_branch>`
+
+_Ex.: http://wistech.epizy.com/main/_
+
 ## Referências
 
 * Biblioteca dotenv: https://github.com/vlucas/phpdotenv
