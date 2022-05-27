@@ -1,8 +1,8 @@
 <?php
-    $msgErr = '';
-    if (isset($_GET) && isset($_GET['error'])) {
-        $msgErr = $_GET['error'];
-    }
+$msgErr = '';
+if (isset($_GET) && isset($_GET['error'])) {
+    $msgErr = $_GET['error'];
+}
 ?>
 
 <!DOCTYPE html>

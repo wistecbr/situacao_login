@@ -1,9 +1,6 @@
 name: 🚀 Deploy website on push
 
 on: 
-  pull_request:
-    branches:
-      - wisley
   push:
     branches:
       - main

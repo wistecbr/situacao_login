@@ -48,8 +48,7 @@ Criar as configurações do banco de dados utilizando o arquivo `.env` para cone
 
 ## 4) TESTES
 
-Veifique se já contem a PR da sua branch 
-_item 6_ da [lista](https://github.com/wistech7l/situacao_login#iniciando) 
+Verifique se o seu código possui o o arquivo de deploy, disponível em ```.github/workflows/deploy.yml```
 
 Para testar se está tudo ok, basta realizar o commit na sua branch verificar se houve o deploy completo
 no [GitHub Actions](https://github.com/wistech7l/situacao_login/actions).
