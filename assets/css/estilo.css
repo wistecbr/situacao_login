@@ -56,7 +56,7 @@ label{
 input{
     border: 1px #fff solid;
     border-radius: 10px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     background-color: transparent;
     height: 30px;
     color: #020225;
@@ -66,8 +66,7 @@ input{
     display: flex;
     gap: 15px;
     justify-content: center;
-    color: #020225;
-    font-weight: bold;
+    
     
 }
 
@@ -77,6 +76,8 @@ textarea:focus, input:focus, select:focus {
 
 .btn{
     cursor: pointer;
+    color: #020225;
+    font-weight: bold;
 }
 .cadastro{
     text-align: center;

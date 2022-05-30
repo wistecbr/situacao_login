@@ -1,33 +1,34 @@
 <?php
-     include('mysql.php');
+    
+     session_start();
 
-     if(isset($_POST['login']) && isset($_POST['password'])){
-         if(strlen($_POST['login'])== 0){ //verifica se o campo login está zerado sem caracteres
-             echo "Preencha seu e-mail";
-         }else if(strlen($_POST['password'])== 0){ //verifica se a zero caracteres campo senha
-             echo "Preencha sua senha";
-         }else{
-            $login = htmlspecialchars($_POST['login']);
-            $password = md5(htmlspecialchars($_POST['password']));
-          
-            
-     }
-     }
-  
-     function valida_login($login, $password) {
-        $query = 'SELECT login, password FROM users WHERE login =' .$login . 'password =' .$password  .' LIMIT 1;';           
-        $link = conecta();
+     if(!empty($_POST['login']) && !empty($_POST['password']))
+    {
+        include('mysql.php');
+        $usuario = $_POST['login'];
+        $password = ($_POST['password']);
+        $senha = md5($password);
+        $nome = $_POST['nome'];
+        //print_r('Email: ' . $login); teste para  verificar o que estou recebendo
+         //print_r('<br>');
+         //print_r('Senha: ' . $password);
+         //print_r('Senha: ' . $md5Password);
+
+         $query = "SELECT id, login, password FROM users WHERE login = '$usuario' and password = '$senha'";
+         $link = conecta();
         if($link !== NULL){
             $result = mysqli_query($link, $query);
-            if($result){
-               if ($_POST['login'] ==$login && $_POST['password']== $password){
-               var_dump($_POST['login']);
-                
-                header("Location: ./bemvindo.php");
-            }
-            }
-                echo "Falha ao logar! Login ou senha incorretos";
-            
-                }}
-    
+ 
+        //print_r($result);
+         //print_r($usuario); teste para verificar o que estou recebendo
+         //print_r($query);
+         if(mysqli_num_rows($result)<1){
+            header('Location: ../login.php');
+         }else{
+             header('Location: ../bemvindo.php');
+         }
+        }
+     }
+  
+     
 ?>

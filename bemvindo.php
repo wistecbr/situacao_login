@@ -1,12 +1,13 @@
 <?php
-    $user = '';
+    
+    $users = '';
     if (isset($_GET) && isset($_GET['username'])) {
-        $user = $_GET['username'];
+        $users = $_GET['username'];
     }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -19,10 +20,8 @@
 </head>
 
 <body>
-    <header>
-        <figure>
-            <img src="" alt="logo">
-        </figure>
+<header>
+        <h1>Sistema Login</h1>
         <ul>
             <li> <a href="./">Home</a></li>
         </ul>
@@ -34,7 +33,8 @@
 
         if ($users !== '') {
             echo '<h1> Bem-Vindo </h1>';
-            echo '<h2>'.$users.'</h2>';
+            print_r('<h2>'.$users['nome'].'</h2>');
+            
         }
         ?>
 
