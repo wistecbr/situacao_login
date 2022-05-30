@@ -1,8 +1,17 @@
 <?php
-    
+    session_start();
+    //print_r($_SESSION);
+    if((!isset($_SESSION['usuario'])== true)and (!isset($_SESSION['senha']) == true)){
+        unset($_SESSION['usuario']); //se não tiver esta variável ele destroi a sessão
+        unset($_SESSION['senha']);
+        header('Location: ./login.php ');
+    }else{
+        $logado = $_SESSION['usuario'];
+    }
+
     $users = '';
-    if (isset($_GET) && isset($_GET['username'])) {
-        $users = $_GET['username'];
+    if (isset($_GET) && isset($_GET['nome'])) {
+        $users = $_GET['nome'];
     }
 ?>
 
@@ -31,11 +40,11 @@
 
         <?php
 
-        if ($users !== '') {
-            echo '<h1> Bem-Vindo </h1>';
-            print_r('<h2>'.$users['nome'].'</h2>');
+        
+            echo "<h1> Bem-Vindo </h1>";
+            echo'<h2>'.$logado.'</h2>';
             
-        }
+     
         ?>
 
 
