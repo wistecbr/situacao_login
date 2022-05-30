@@ -16,7 +16,7 @@ main{
     justify-content: center;
     align-items: center;
     width: 30%;
-    height: 180px;
+    height: 210px;
     
 }
 
@@ -33,6 +33,7 @@ header{
 h1{
     text-align: center;
     width: 70%;
+    color: #020225;
 }
 header li{
     padding-bottom: 5px;
@@ -49,6 +50,8 @@ a{
 
 label{
     font-size: 1.1rem;
+    color: #020225;
+    font-weight: bold;
 }
 input{
     border: 1px #fff solid;
@@ -56,11 +59,15 @@ input{
     font-size: 1.1rem;
     background-color: transparent;
     height: 30px;
+    color: #020225;
+    
 }
 .botao{
     display: flex;
     gap: 15px;
     justify-content: center;
+    color: #020225;
+    font-weight: bold;
     
 }
 
@@ -70,4 +77,13 @@ textarea:focus, input:focus, select:focus {
 
 .btn{
     cursor: pointer;
+}
+.cadastro{
+    text-align: center;
+    color: #fff;
+
+}
+.cadastro a{
+    font-weight: bold;
+    color: #fff;
 }

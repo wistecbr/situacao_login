@@ -53,6 +53,7 @@
                 <input class="btn" type="submit" value="Entrar">
                 <input class="btn" type="button" value="Cancelar" onclick="bt_cancelar()">
             </p>
+            <p class="cadastro">Ainda não é inscrito: <a href="./cadastra.php">Cadastra-se!</a></p>
 
             </form>
         </section>
