@@ -1,9 +1,6 @@
 <?php
-    $msgErr = '';
-    if (isset($_GET) && isset($_GET['error'])) {
-        $msgErr = $_GET['error'];
-    }
-    /*include './lib/validate.php';
+    
+    include './lib/validate.php';
 
     if(isset($_POST['username']) && isset($_POST['password'])){
 
@@ -15,7 +12,11 @@
         }else{
             header('Location: ./login.php?login=erro ');
         }
-    }*/
+    }
+    $msgErr = '';
+    if (isset($_GET) && isset($_GET['error'])) {
+        $msgErr = $_GET['error'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +42,7 @@
         </ul>
     </header>
     <main>
-        <form action="./lib/valida.php" method="post" enctype="multipart/form-data">
+        <form action="./lib/validate.php" method="post" enctype="multipart/form-data">
             <p>
                 <label> Login: </label>
                 <input name="login" type="text" id="box_login">
