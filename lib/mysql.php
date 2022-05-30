@@ -1,14 +1,16 @@
 <?php
+ function conecta() {
+    $user = 'root';
+    $password = '';
+    $database = 'situacao_login';
+    $host = 'localhost';
 
-$usuario = 'root';
-$senha = '';
-$database = 'situacao_login';
-$host = 'localhost';
+    $mysqli = mysqli_connect($host, $user, $password, $database);
 
-$mysqli = new mysqli($host, $usuario, $senha, $database);
-
-if($mysqli -> error){
-    die("Falha ao conectar banco de dados!!!" . $mysqli->error);
-}
-
+    if (mysqli_connect_errno()) {
+        return NULL;
+    }else {
+        return $mysqli;
+    }
+    }
 ?>

@@ -13,8 +13,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assests/css/reset.css">
-    <link rel="stylesheet" href="./assests/css/stilo.css">
-    <script src="./assests/js/script.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/estilo.css">
+    <script src="./assets/js/script.js" defer></script>
     <title>Bem Vindo</title>
 </head>
 
@@ -32,9 +32,9 @@
 
         <?php
 
-        if ($user !== '') {
+        if ($users !== '') {
             echo '<h1> Bem-Vindo </h1>';
-            echo '<h2>'.$user.'</h2>';
+            echo '<h2>'.$users.'</h2>';
         }
         ?>
 
