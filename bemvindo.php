@@ -1,12 +1,21 @@
 <?php
-    $user = '';
-    if (isset($_GET) && isset($_GET['username'])) {
-        $user = $_GET['username'];
+    session_start();
+    if((!isset($_SESSION['username'])== true)and (!isset($_SESSION['senha']) == true)){
+        unset($_SESSION['username']);
+        unset($_SESSION['senha']);
+        header('Location: ./login.php ');
+    }else{
+        $logado = $_SESSION['username'];
+    }
+
+    $users = '';
+    if (isset($_GET) && isset($_GET['name'])) {
+        $users = $_GET['name'];
     }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -20,16 +29,12 @@
 
 <body>
     <header>
-        <figure>
-            <img src="" alt="logo">
-        </figure>
+        <h1>Faça login para continuar </h1>
         <ul>
             <li> <a href="./">Home</a></li>
         </ul>
     </header>
     <main>
-
-
         <?php
 
         if ($user !== '') {
@@ -37,10 +42,6 @@
             echo '<h2>'.$user.'</h2>';
         }
         ?>
-
-
-
-
     </main>
     <footer>
 
