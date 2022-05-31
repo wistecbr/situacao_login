@@ -1,7 +1,17 @@
 <?php
-    $user = '';
-    if (isset($_GET) && isset($_GET['username'])){
-        $user = $_GET['username'];
+    login();
+
+    if((!isset($_SESSION['usuario'])== true)and (!isset($_SESSION['senha']) == true)){
+        unset($_SESSION['usuario']);
+        unset($_SESSION['senha']);
+        header('Location: ./login.php ');
+    }else{
+        $logado = $_SESSION['usuario'];
+    }
+
+    $users = '';
+    if (isset($_GET) && isset($_GET['nome'])) {
+        $users = $_GET['nome'];
     }
 ?>
 <!DOCTYPE html>
