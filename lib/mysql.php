@@ -1,7 +1,7 @@
 <?php
 require __DIR__. '/../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImutable(__DIR__. '/../');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__. '/../');
 $dotenv->load();
 
 $host = $_ENV['HOST'];
@@ -12,10 +12,10 @@ $database = $_ENV['DATABASE'];
 
 
  function conecta() {
-    $user = 'root';
-    $password = '';
-    $database = 'situacao_login';
-    $host = 'localhost';
+    $user = $GLOBALS['user'];
+    $password = $GLOBALS['password'];
+    $database = $GLOBALS['database'];
+    $host = $GLOBALS['host'];
 
     $mysqli = mysqli_connect($host, $user, $password, $database);
 
