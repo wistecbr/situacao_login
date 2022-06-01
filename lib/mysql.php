@@ -1,4 +1,5 @@
 <?php
+
     require __DIR__.'/../vendor/autoload.php';// Pega o arquivo dentro da pasta vendor
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
     $dotenv->load();
@@ -20,7 +21,6 @@
         $database = $GLOBALS['database'];
 
         $mysqli = mysqli_connect($host, $userDb, $password, $database);
-
         if (mysqli_connect_errno()) {
             return NULL;
         }else {

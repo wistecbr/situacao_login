@@ -1,6 +1,10 @@
 <?php
     include './lib/validate.php';
+<<<<<<< HEAD
     $msgErr='';
+=======
+
+>>>>>>> cda8ef66abc1620d387b463b7d3e5ed5e9c3ae9d
 ?>
 
 <!DOCTYPE html>
