@@ -1,5 +1,6 @@
 <?php
-    session_start();
+  
+    /*session_start();
     //print_r($_SESSION);
     if((!isset($_SESSION['usuario'])== true)and (!isset($_SESSION['senha']) == true)){
         unset($_SESSION['usuario']); //se não tiver esta variável ele destroi a sessão
@@ -8,10 +9,11 @@
     }else{
         $logado = $_SESSION['usuario'];
     }
-
-    $users = '';
+*/
+   $user = '';
     if (isset($_GET) && isset($_GET['nome'])) {
-        $users = $_GET['nome'];
+        
+        $user = $_GET['nome'];
     }
 ?>
 
@@ -42,7 +44,7 @@
 
         
             echo "<h1> Bem Vindo!!! </h1>";
-            echo'<h2>'.$logado.'</h2>';
+            echo'<h2>'.$user.'</h2>';
             
      
         ?>
