@@ -1,11 +1,12 @@
 <?php
+    include './mysql.php';
 
-    function loginCompare($loginOficial, $passOficial){
+    if(isset($_POST['username']) && isset($_POST['password'])){
 
-        if($loginOficial === 'admin' && $passOficial === '21232f297a57a5a743894a0e4a801fc3'){
-
-            return 1;
-        }
-        return 0;
+        $user = htmlspecialchars($_POST['username']);
+        $password = md5(htmlspecialchars($_POST['password']));
+    
+        login($user,$password);
     }
+    
 ?>
