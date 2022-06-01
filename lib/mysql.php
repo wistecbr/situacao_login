@@ -1,15 +1,15 @@
 <?php
-require _DIR_ . '/../vendor/autoload.php';
+require __DIR__. '/../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv:: createImutable(__DIR__ . '/../');
-$dotenv ->load();
+$dotenv = Dotenv\Dotenv::createImutable(__DIR__. '/../');
+$dotenv->load();
 
 $host = $_ENV['HOST'];
 $user = $_ENV['USER'];
 $password = $_ENV['PASSWORD'];
 $database = $_ENV['DATABASE'];
 
-echo 'Host:' .$host . 'user' . $user . 'password' . $password . 'database' . $database;
+
 
  function conecta() {
     $user = 'root';
