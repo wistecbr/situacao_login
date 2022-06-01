@@ -41,7 +41,7 @@
         <?php
 
         
-            echo "<h1> Bem-Vindo </h1>";
+            echo "<h1> Bem Vindo!!! </h1>";
             echo'<h2>'.$logado.'</h2>';
             
      
