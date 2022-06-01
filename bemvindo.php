@@ -11,9 +11,9 @@
     }
 */
    $user = '';
-    if (isset($_GET) && isset($_GET['nome'])) {
+    if (isset($_GET) && isset($_GET['username'])) {
         
-        $user = $_GET['nome'];
+        $user = $_GET['username'];
     }
 ?>
 

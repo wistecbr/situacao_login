@@ -27,7 +27,7 @@ $database = $_ENV['DATABASE'];
     }
 
     function logar($usuario, $senha){
-        $query = "SELECT id, login, password FROM users WHERE login = '$usuario' and password = '$senha'";
+        $query = "SELECT id, login, password nome FROM users WHERE login = '$usuario' and password = '$senha'";
          $link = conecta();
         if($link !== NULL){
             $result = mysqli_query($link, $query);
@@ -43,7 +43,7 @@ $database = $_ENV['DATABASE'];
             //$_SESSION['usuario'] = $usuario;
             //$_SESSION['senha'] = $senha;
             //$_SESSION['nome'] = $nome;
-             header('Location: ../bemvindo.php');
+             header('Location: ../bemvindo.php?username=$nome');
 
          }
         }
