@@ -1,22 +1,6 @@
 <?php
-    
     include './lib/validate.php';
 
-    if(isset($_POST['username']) && isset($_POST['password'])){
-
-        $user = htmlspecialchars($_POST['username']);
-        $password = md5(htmlspecialchars($_POST['password']));
-    
-        if(loginCompare($user, $password) === 1){
-            header('Location: ./home.php ');
-        }else{
-            header('Location: ./login.php?login=erro ');
-        }
-    }
-    $msgErr = '';
-    if (isset($_GET) && isset($_GET['error'])) {
-        $msgErr = $_GET['error'];
-    }
 ?>
 
 <!DOCTYPE html>
@@ -44,8 +28,8 @@
     <main>
         <form action="./lib/validate.php" method="post" enctype="multipart/form-data">
             <p>
-                <label> Login: </label>
-                <input name="login" type="text" id="box_login">
+                <label> Username: </label>
+                <input name="username" type="text" id="box_login">
             </p>
 
             <p>
