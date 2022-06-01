@@ -1,7 +1,12 @@
 <?php
     $user = '';
+    $id = 0;
     if (isset($_GET) && isset($_GET['username'])) {
         $user = $_GET['username'];
+    }
+
+    if( isset($_GET['id'])){
+        $id = (INT) $_GET['id'];
     }
 ?>
 
@@ -34,12 +39,9 @@
 
         if ($user !== '') {
             echo '<h1> Bem-Vindo </h1>';
-            echo '<h2>'.$user.'</h2>';
+            echo '<h2>'.$id . '-' . $user.'</h2>';
         }
         ?>
-
-
-
 
     </main>
     <footer>
