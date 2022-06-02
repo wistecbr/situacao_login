@@ -52,7 +52,7 @@ $database = $_ENV['DATABASE'];
                 $nome = $login['nome'];
                 $id = $login['id'];
             }
-             header("Location: ../bemvindo.php?username=$nome");
+             header("Location: ../bemvindo.php?username=$nome"); 
          }
         }else {
             header('Location: ../login.php?erro=banco');
