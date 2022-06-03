@@ -1,16 +1,50 @@
 <?php
- function conect(){
-    $user = 'root';
-    $password = '';
-    $database = 'login';
-    $host = 'localhost';
+    require __DIR__. '/../vendor/autoload.php';
 
-    $mysqli = mysqli_connect($host, $user, $password, $database);
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__. '/../');
+    $dotenv->load();
 
-    if (mysqli_connect_errno()) {
+    $host = $_ENV['HOST'];
+    $userDb = $_ENV['USER'];
+    $passwordDb = $_ENV['PASSWORD'];
+    $database = $_ENV['DATABASE'];
+
+    function conecta(){
+        $userDb = $GLOBALS['userDb'];
+        $passwordDb = $GLOBALS['passwordDb'];
+        $database = $GLOBALS['database'];
+        $host = $GLOBALS['host'];
+        $mysqli = mysqli_connect($host, $userDb, $passwordDb, $database);
+
+    if (mysqli_connect_errno()){
         return NULL;
-    }else {
+    }else{
         return $mysqli;
     }
+}
+    function logar($usuario, $senha){
+          $query = "SELECT id, login, nome, tipo FROM users WHERE login = '$usuario' and password = '$senha'";
+          $link = conecta();
+          if($link !== NULL){
+              $result = mysqli_query($link, $query);
+
+          if(mysqli_num_rows($result)<1){
+              header('Location: ../login.php?erro=query');
+          }else{
+              while($row = mysqli_fetch_row($result)){
+                  $login = array(
+                      'id' => $row[0],
+                      'login' => $row[1],
+                      'nome' => $row[2],
+                      'tipo' => $row[3]);
+
+                $nome = $login['nome'];
+                $id = $login['id'];
+                }
+        header("Location: ../bemvindo.php?username=$nome");
+        }
+        }else{
+            header('Location: ../login.php?erro=banco');
+        }
     }
 ?>
