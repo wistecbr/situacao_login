@@ -1,5 +1,7 @@
 # situacao_login
 
+## Parte 1
+
 ## Importante
 Cada aluno terá uma branch especifica com seu nome, caso não tenha a sua criada no repositório, solicitar o professor.
 
@@ -63,3 +65,13 @@ _Ex.: http://wistech.epizy.com/main/_
 * Biblioteca dotenv: https://github.com/vlucas/phpdotenv
 
 * GitHub da concessionária: https://github.com/wistech7l/Crud_Concessionaria
+
+# Parte 2
+
+## Completar a área de cadastro de usuários.
+
+Caso o cadastro seja bem sucessedido, redirecionar o usuário para página de login.
+E tente realizar o login.
+
+caso haja erro no cadastro redirecionar o usuário para própria página de cadastro com um requisição `GET` `erro=cadastro`
+
