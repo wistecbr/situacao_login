@@ -68,6 +68,23 @@ _Ex.: http://wistech.epizy.com/main/_
 
 # Parte 2
 
+Antes de tudo vocês vão precisar juntar o código aqui da branch `main` com o código da branch de vocês, para isso vocÊs vão executar os seguintes comandos `GIT`
+
+### 1)
+`git pull`
+
+### 2)
+`git checkout main`
+
+### 3)
+`git pull origin main`
+
+### 4)
+`git checkout <sua_branch>`
+
+### 5)
+`git merge main`
+
 ## Completar a área de cadastro de usuários.
 
 Caso o cadastro seja bem sucessedido, redirecionar o usuário para página de login.
