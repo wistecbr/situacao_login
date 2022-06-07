@@ -1,20 +1,8 @@
 <?php
-  
-    /*session_start();
-    //print_r($_SESSION);
-    if((!isset($_SESSION['usuario'])== true)and (!isset($_SESSION['senha']) == true)){
-        unset($_SESSION['usuario']); //se não tiver esta variável ele destroi a sessão
-        unset($_SESSION['senha']);
-        header('Location: ./login.php ');
-    }else{
-        $logado = $_SESSION['usuario'];
-    }
-*/
-   $user = '';
-    if (isset($_GET) && isset($_GET['username'])) {
-        
-        $user = $_GET['username'];
-    }
+$user = '';
+if (isset($_GET) && isset($_GET['username'])) {
+    $user = $_GET['username'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +16,7 @@
     <link rel="stylesheet" href="./assets/css/estilo.css">
     <script src="./assets/js/script.js" defer></script>
     <title>Bem Vindo</title>
+
 </head>
 
 <body>
@@ -38,19 +27,13 @@
         </ul>
     </header>
     <main>
-
-
         <?php
 
-        
-            echo "<h1> Bem Vindo!!! </h1>";
-            echo'<h2>'.$user.'</h2>';
-            
-     
+            if ($user !== '') {
+                echo '<h1> Bem-Vindo </h1>';
+                echo '<h2>' . $user . '</h2>';
+            }
         ?>
-
-
-
 
     </main>
     <footer>

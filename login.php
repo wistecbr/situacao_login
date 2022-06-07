@@ -1,10 +1,10 @@
 <?php
-   
 
-    $msgErr = '';
-    if (isset($_GET) && isset($_GET['error'])) {
-        $msgErr = $_GET['error'];
-    }
+$msgErr = '';
+if (isset($_GET) && isset($_GET['error'])) {
+    $msgErr = $_GET['error'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/estilo.css">
     <script src="./assets/js/script.js" defer></script>
+
     <title>Login</title>
 </head>
 
