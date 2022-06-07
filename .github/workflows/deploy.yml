@@ -17,10 +17,6 @@ on:
       - savio
       - pedro
       - wisley
-<<<<<<< HEAD
-  
-=======
->>>>>>> main
 
 jobs:
   web-deploy:
@@ -53,11 +49,6 @@ jobs:
           else 
             echo "::set-output name=name::${GITHUB_HEAD_REF}"
           fi
-<<<<<<< HEAD
-=======
-
-
->>>>>>> main
       - name: Set local dir
         id: set_local_dir
         env:
@@ -75,8 +66,5 @@ jobs:
           server: ${{ secrets.ftp_host }}
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_pass }}
-<<<<<<< HEAD
           server-dir: ${{ steps.set_local_dir.outputs.name }}
-=======
-          server-dir: ${{ steps.set_local_dir.outputs.name }}
->>>>>>> main
+
