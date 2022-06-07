@@ -70,22 +70,28 @@ _Ex.: http://wistech.epizy.com/main/_
 
 Antes de tudo vocês vão precisar juntar o código aqui da branch `main` com o código da branch de vocês, para isso vocÊs vão executar os seguintes comandos `GIT`
 
-### 1)
+### 1) Git pull
 `git pull`
 
-### 2)
+### 2) Mudar para Branch
 `git checkout main`
 
-### 3)
+### 3) Git Pull na branch Main
 `git pull origin main`
 
-### 4)
+### 4) Mudar para sua Branch
 `git checkout <sua_branch>`
 
-### 5)
+### 5) Mesclagem do código com a Main
 `git merge main`
 
-## Completar a área de cadastro de usuários.
+### 6) Conflitos
+Muito provavelmente haverá conflitos ao realizarem a mesclagem do código de vocês com a `main`
+
+Então será preciso resolve-los primeiro. Realizar o commit do código e continuar a atividade.
+
+### Agora complete o código
+ Completar a área de cadastro de usuários.
 
 Caso o cadastro seja bem sucessedido, redirecionar o usuário para página de login.
 E tente realizar o login.
