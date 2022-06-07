@@ -36,18 +36,12 @@
     </header>
     <main>
         <?php
-<<<<<<< HEAD
 
         if ($user !== '') {
             echo '<h1> Bem-Vindo </h1>';
             echo '<h2>'.$id . '-' . $user.'</h2>';
         }
-=======
-            if ($user !== '') {
-                echo '<h1> Bem-Vindo </h1>';
-                echo '<h2>' . $user . '</h2>';
-            }
->>>>>>> main
+
         ?>
 
     </main>
