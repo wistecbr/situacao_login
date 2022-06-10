@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./assests/css/reset.css">
     <link rel="stylesheet" href="./assests/css/stilo.css">
     <script src="./assests/js/script.js" defer></script>
-    <title>Cadastrar Carro</title>
+    <title>Cadastro User</title>
 </head>
 <body>
     <header>
@@ -17,8 +17,6 @@
         </figure>
         <ul>
             <li> <a href="./">Home</a></li>
-            <li><a href="./carros.php">Lista de carros</a></li>
-            <li><a href="./cadastro.php">Cadastrar Carro</a></li>
         </ul>
     </header>
     <main>
@@ -28,23 +26,23 @@
                 <input name="nome" type="text" id="box_nome">
             </p>
             <p>
-                <label> login: </label>
-                <select id="box_login" name="login">
+                <label> Username: </label>
+                <select name="username" id="box_login">
             </p>
             <p>
                 <label> Senha: </label>
                 <input name="password" type="password" id="box_password">
             </p>
             <p>
-                <label> Marca: </label>
-                <select id="box_tipo" name="tipo">
+                <label> Função: </label>
+                <select name="tipo" id="box_tipo" >
                     <option value="">Administrador</option>
                     <option value="">Cliente</option>
                     <option value="">Funcionário</option>
                 </select>
             </p>
             <p>
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="Cadastrar" >
                 <input type="button" value="Cancelar" onclick="bt_cancelar()">
             </p>
         </form>

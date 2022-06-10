@@ -58,4 +58,14 @@
         }
 
     }
+    function cadastrarUser($nome, $user, $password){
+        $query = "INSERT INTO users (nome, login, password) values ('" . $nome . "', '" . $user . "', '" . $password . "');";
+        $link = conecta();
+        if($link !== NULL){
+            $result = mysqli_query($link, $query);
+            return $result;
+        }else {
+            return NULL;
+        }
+    }
 ?>
