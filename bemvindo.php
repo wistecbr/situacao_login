@@ -32,6 +32,7 @@
         </figure>
         <ul>
             <li> <a href="./">Home</a></li>
+            <li> <a href="./cadastraUser.php">Cadastra</a></li>
         </ul>
     </header>
     <main>

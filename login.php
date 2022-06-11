@@ -52,7 +52,7 @@
                 }
             ?>
             <p>
-                <input type="submit" value="Cadastrar" action= "./cadastraUser.php">
+                <input type="submit" value="Login" action= "./cadastraUser.php">
                 <input type="button" value="Cancelar" onclick="bt_cancelar()">
             </p>
 

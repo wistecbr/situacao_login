@@ -56,16 +56,23 @@
         }else{
             header("Location: ../login.php?erro=query");
         }
-
     }
-    function cadastrarUser($nome, $user, $password){
-        $query = "INSERT INTO users (nome, login, password) values ('" . $nome . "', '" . $user . "', '" . $password . "');";
+
+    function cadastrarUser($nome, $user, $password, $typeUser){
+        $query = "INSERT INTO users (nome, login, password, tipo) values ('$nome', '$user', '$password', $typeUser );";
         $link = conecta();
         if($link !== NULL){
             $result = mysqli_query($link, $query);
-            return $result;
+
+            if($result){
+                header("Location: ../login.php");//redirect to login page if login exist
+            }else{
+                header("Location: ../cadastraUser.php?erro=query");// redirect to cadastra if login don't exist
+            }
         }else {
-            return NULL;
+            header("Location: ../login.php?erro=banco");// if link is null redirect to login  
+    
         }
     }
+    
 ?>
