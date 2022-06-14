@@ -98,3 +98,18 @@ E tente realizar o login.
 
 caso haja erro no cadastro redirecionar o usuário para própria página de cadastro com um requisição `GET` `erro=cadastro`
 
+# Parte 3
+
+Agora que você implmentou o cadastro de usuários, crie uma página para lista-los e que contenham dois botões (`[Editar]` `[Excluir]`) em uma coluna opções, conforme a tabela abaixo: 
+
+|Nome| login| Tipo| Opções|
+| ---| ---| ---| ---|
+| Administrador| admin | Admistrador|  [Editar] [Excluir] |
+| João| jao | Cliente |[Editar] [Excluir]|
+| ... |  |  | [Editar] [Excluir]|
+
+
+## Crie as funções dos botões:
+* **Editar:** O usuário será redirecionado para um formulário de edição. 
+
+* **Excluir:** deverá remover a linha que o usuário clicou.
