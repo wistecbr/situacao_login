@@ -22,12 +22,13 @@
     <main>
         <form action="./lib/valida.php" method="post" enctype="multipart/form-data">
             <p>
+              
                 <label> Nome: </label>
                 <input name="nome" type="text" id="box_nome">
             </p>
             <p>
                 <label> Username: </label>
-                <select name="username" id="box_login">
+                <input name="username" id="box_login" type="text">
             </p>
             <p>
                 <label> Senha: </label>
@@ -36,16 +37,14 @@
             <p>
                 <label> Função: </label>
                 <select name="tipo" id="box_tipo" >
-                    <option value="">Administrador</option>
-                    <option value="">Cliente</option>
-                    <option value="">Funcionário</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Cliente</option>
+                    <option value="3">Funcionário</option>
                 </select>
             </p>
             <p>
-              <p>
-              <input type="submit" value="Cadastrar" action= "./cadastraUser.php">
-              <input type="button" value="Cancelar" onclick="bt_cancelar()">
-              </p>
+                <input type="submit" value="Cadastrar" >
+                <input type="button" value="Cancelar" onclick="bt_cancelar()">
             </p>
         </form>
     </main>
