@@ -1,5 +1,7 @@
 # situacao_login
 
+## Parte 1
+
 ## Importante
 Cada aluno terá uma branch especifica com seu nome, caso não tenha a sua criada no repositório, solicitar o professor.
 
@@ -48,8 +50,7 @@ Criar as configurações do banco de dados utilizando o arquivo `.env` para cone
 
 ## 4) TESTES
 
-Veifique se já contem a PR da sua branch 
-_item 6_ da [lista](https://github.com/wistech7l/situacao_login#iniciando) 
+Verifique se o seu código possui o o arquivo de deploy, disponível em ```.github/workflows/deploy.yml```
 
 Para testar se está tudo ok, basta realizar o commit na sua branch verificar se houve o deploy completo
 no [GitHub Actions](https://github.com/wistech7l/situacao_login/actions).
@@ -64,3 +65,51 @@ _Ex.: http://wistech.epizy.com/main/_
 * Biblioteca dotenv: https://github.com/vlucas/phpdotenv
 
 * GitHub da concessionária: https://github.com/wistech7l/Crud_Concessionaria
+
+# Parte 2
+
+Antes de tudo vocês vão precisar juntar o código aqui da branch `main` com o código da branch de vocês, para isso vocÊs vão executar os seguintes comandos `GIT`
+
+### 1) Git pull
+`git pull`
+
+### 2) Mudar para Branch
+`git checkout main`
+
+### 3) Git Pull na branch Main
+`git pull origin main`
+
+### 4) Mudar para sua Branch
+`git checkout <sua_branch>`
+
+### 5) Mesclagem do código com a Main
+`git merge main`
+
+### 6) Conflitos
+Muito provavelmente haverá conflitos ao realizarem a mesclagem do código de vocês com a `main`
+
+Então será preciso resolve-los primeiro. Realizar o commit do código e continuar a atividade.
+
+### Agora complete o código
+ Completar a área de cadastro de usuários.
+
+Caso o cadastro seja bem sucessedido, redirecionar o usuário para página de login.
+E tente realizar o login.
+
+caso haja erro no cadastro redirecionar o usuário para própria página de cadastro com um requisição `GET` `erro=cadastro`
+
+# Parte 3
+
+Agora que você implmentou o cadastro de usuários, crie uma página para lista-los e que contenham dois botões (`[Editar]` `[Excluir]`) em uma coluna opções, conforme a tabela abaixo: 
+
+|Nome| login| Tipo| Opções|
+| ---| ---| ---| ---|
+| Administrador| admin | Admistrador|  [Editar] [Excluir] |
+| João| jao | Cliente |[Editar] [Excluir]|
+| ... |  |  | [Editar] [Excluir]|
+
+
+## Crie as funções dos botões:
+* **Editar:** O usuário será redirecionado para um formulário de edição. 
+
+* **Excluir:** deverá remover a linha que o usuário clicou.

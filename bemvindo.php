@@ -1,7 +1,7 @@
 <?php
 $user = '';
 if (isset($_GET) && isset($_GET['username'])) {
-    $user = $_GET['username'];
+    $user =htmlspecialchars( $_GET['username']);
 }
 ?>
 

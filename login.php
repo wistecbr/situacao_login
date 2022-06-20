@@ -1,8 +1,8 @@
 <?php
-    $msgErr = '';
-    if (isset($_GET) && isset($_GET['error'])) {
-        $msgErr = $_GET['error'];
-    }
+$msgErr = '';
+if (isset($_GET) && isset($_GET['error'])) {
+    $msgErr = $_GET['error'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -43,12 +43,12 @@
 
             if ($msgErr !== '') {
                 echo '<p>';
-                echo '<label> Erro login/senha ' . $msgErr . '</label>';
+                echo '<label> Erro: ' . $msgErr . '</label>';
                 echo '</p>';
             }
             ?>
             <p>
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="login">
                 <input type="button" value="Cancelar" onclick="bt_cancelar()">
             </p>
 

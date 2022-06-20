@@ -1,0 +1,49 @@
+header{
+    padding: 5px 15px;
+    background: #555555;
+    display: flex;
+    justify-content: space-between;
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul li {
+    margin-right: 5px;
+}
+
+table {
+    margin: 15px 15px;
+    border: 1px solid black;
+}
+
+tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+tr th{
+    margin-left: 15px;
+    padding: 5px 5px;
+    font-weight: bold;
+}
+
+td{
+    margin-left: 15px;
+    padding: 5px 5px;
+}
+
+form{
+    margin: 15px 35px;
+}
+
+form p {
+    margin-top: 15px;
+}
