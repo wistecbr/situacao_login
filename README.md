@@ -113,3 +113,12 @@ Agora que você implmentou o cadastro de usuários, crie uma página para lista-
 * **Editar:** O usuário será redirecionado para um formulário de edição. 
 
 * **Excluir:** deverá remover a linha que o usuário clicou.
+
+
+# Parte 4
+
+Vamos agora adicionar mais uma funcionalidade no nosso projeto. 
+Vamos adicionar `Session` para verificar que um usuário esta logado ou não.
+E permita o acesso a páginas de cadastro, lista de usuários, editar e excluir apenas para os usuários do `tipo 1`, que são os Administradores do sistema.
+
+Na branch `wisley` desse projeto vocês encontrarão exemplo de como implementar `session`
