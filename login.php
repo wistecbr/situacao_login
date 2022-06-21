@@ -1,4 +1,7 @@
 <?php
+include './lib/utils.php';
+$login = verificaSessao();
+
 $msgErr = '';
 if (isset($_GET) && isset($_GET['error'])) {
     $msgErr = $_GET['error'];
@@ -15,13 +18,18 @@ if (isset($_GET) && isset($_GET['error'])) {
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/stilo.css">
     <script src="./assests/js/script.js" defer></script>
-    <title>Login</title>
+    <title>Login 2</title>
 </head>
 
 <body>
     <header>
         <figure>
             <img src="" alt="logo">
+            <?php
+                if($login !== 0){
+                    echo '<a href="./lib/valida.php?logout">Logout</a>';
+                }
+            ?>
         </figure>
         <ul>
             <li> <a href="./">Home</a></li>
@@ -43,12 +51,12 @@ if (isset($_GET) && isset($_GET['error'])) {
 
             if ($msgErr !== '') {
                 echo '<p>';
-                echo '<label> Erro login/senha ' . $msgErr . '</label>';
+                echo '<label> Erro: ' . $msgErr . '</label>';
                 echo '</p>';
             }
             ?>
             <p>
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="login">
                 <input type="button" value="Cancelar" onclick="bt_cancelar()">
             </p>
 

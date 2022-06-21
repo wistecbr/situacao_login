@@ -40,8 +40,6 @@ jobs:
           else 
             echo "::set-output name=name::${GITHUB_HEAD_REF}"
           fi
-
-
       - name: Set local dir
         id: set_local_dir
         env:

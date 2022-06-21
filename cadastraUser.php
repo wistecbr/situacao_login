@@ -1,3 +1,12 @@
+<?php
+include './lib/utils.php';
+    $login = verificaSessao();
+    if($login !== 1){
+        header('Location: ./acessorestrito.php');
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +23,11 @@
     <header>
         <figure>
             <img src="" alt="logo">
+            <?php
+                if($login !== 0){
+                    echo '<a href="./lib/valida.php?logout">Logout</a>';
+                }
+            ?>
         </figure>
         <ul>
             <li> <a href="./">Home</a></li>
