@@ -46,6 +46,8 @@
                     );
                 }
                 $username = $usuario['nome'];
+                session_start();
+                $_SESSION['login'] = $usuario;
                 header("Location: ../bemvindo.php?username=$username");
             }
         }

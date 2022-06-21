@@ -22,7 +22,7 @@ if (isset($_GET) && isset($_GET['username'])) {
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/stilo.css">
     <script src="./assests/js/script.js" defer></script>
-    <title>Bem-Vindo</title>
+    <title>ERRO</title>
 </head>
 
 <body>
@@ -37,16 +37,10 @@ if (isset($_GET) && isset($_GET['username'])) {
         </figure>
         <ul>
             <li> <a href="./">Home</a></li>
-            <li> <a href="./cadastraUser.php">Cadastrar Usuário</a></li>
         </ul>
     </header>
     <main>
-        <?php
-            if ($user !== '') {
-                echo '<h1> Bem-Vindo </h1>';
-                echo '<h2>' . $user . '</h2>';
-            }
-        ?>
+        <h1> Acesso NEGADO </h1>
 
     </main>
     <footer>

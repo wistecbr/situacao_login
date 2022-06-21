@@ -1,4 +1,7 @@
 <?php
+include './lib/utils.php';
+$login = verificaSessao();
+
 $msgErr = '';
 if (isset($_GET) && isset($_GET['error'])) {
     $msgErr = $_GET['error'];
@@ -22,6 +25,11 @@ if (isset($_GET) && isset($_GET['error'])) {
     <header>
         <figure>
             <img src="" alt="logo">
+            <?php
+                if($login !== 0){
+                    echo '<a href="./lib/valida.php?logout">Logout</a>';
+                }
+            ?>
         </figure>
         <ul>
             <li> <a href="./">Home</a></li>
