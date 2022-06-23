@@ -1,17 +1,12 @@
 <?php
-
     include './lib/valida.php';
         $msgErr='';
-
     if (isset($_GET) && isset($_GET['error'])) {
         $msgErr = $_GET['error'];
     }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +16,6 @@
     <script src="./assests/js/script.js" defer></script>
     <title>Login</title>
 </head>
-
 <body>
     <header>
         <figure>
@@ -32,19 +26,16 @@
         </ul>
     </header>
     <main>
-        <form action="./lib/s.php" method="post" enctype="multipart/form-data">
+        <form action="./lib/valida.php" method="post" enctype="multipart/form-data">
             <p>
                 <label> Username: </label>
                 <input name="username" type="text" id="box_login">
             </p>
-
             <p>
                 <label> Senha: </label>
                 <input name="password" type="password" id="box_ano">
             </p>
-
             <?php
-
                 if ($msgErr !== '') {
                     echo '<p>';
                     echo '<label> Erro login/senha ' . $msgErr . '</label>';
@@ -55,13 +46,9 @@
                 <input type="submit" value="Login" action= "./cadastraUser.php">
                 <input type="button" value="Cancelar" onclick="bt_cancelar()">
             </p>
-
         </form>
-
     </main>
     <footer>
-
     </footer>
 </body>
-
 </html>
