@@ -53,7 +53,7 @@
                 }else{
                     header("Location: ../cadastraUser.php?erro=query");
                 }
-            }else {
+            }else{
                 header("Location: ../login.php?erro=banco");
         }
     }
