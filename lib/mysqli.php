@@ -76,5 +76,42 @@
         }
         return $lista;
     }
-
+    function removeUser($id){
+        $query = "DELETE FROM users WHERE id =" . $id . ";";
+        $link = conecta();
+        if($link !== NULL){
+            $result = mysqli_query($link, $query);
+            return $result;
+        }else {
+            return NULL;
+        }
+    }
+    function buscaUser($id) {
+        $query = 'SELECT id, login, nome FROM users WHERE id =' .$id . ' LIMIT 1;';
+        $link = conecta();
+        if($link !== NULL){
+            $result = mysqli_query($link, $query);
+            if($result){
+                while ($row = mysqli_fetch_row($result)){
+                   $users = array(
+                        'id' => (INT) $row[0],
+                        'login' => $row[1],
+                        'nome' => $row[2]
+                    );
+                }
+            }
+        }
+        return $users;
+    }
+    function  atulizaUser($id, $login, $nome){
+        $query = "UPDATE users SET id='" . $id ."' , login='".$login."' , nome=" .$nome.
+        " WHERE id=".$id .";";
+        $link = conecta();
+        if($link !== NULL){
+            $result = mysqli_query($link, $query);
+            return $result;
+        }else{
+            return NULL;
+        }
+    }
 ?>
