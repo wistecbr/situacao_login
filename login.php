@@ -28,7 +28,8 @@
             <img src="" alt="logo">
         </figure>
         <ul>
-            <li> <a href="./">Home</a></li>
+            <li> <a href ="./">Home</a></li>
+            <li><a href ="./listar.php"</a>listar Cadastrados</li>
         </ul>
     </header>
     <main>

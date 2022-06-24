@@ -4,7 +4,6 @@
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
     $dotenv->load();
 
-
     //$s3_bucket = $_ENV['S3_BUCKET'];
     $host = $_ENV['HOST'];
     $userDb = $_ENV['USER'];
@@ -35,8 +34,10 @@
 
         if($link !== NULL){
             $result = mysqli_query($link, $query);
+
         }else {
             header("Location: ../login.php?erro=banco");
+            
         }
 
         if($result){
@@ -52,14 +53,17 @@
             $nome = $login['nome'];
             $id = $login['id'];
             header("Location: ../bemvindo.php?username=$nome&id=$id");
+
         }else{
             header("Location: ../login.php?erro=query");
         }
     }
 
     function cadastrarUser($nome, $user, $password, $typeUser){
+
         $query = "INSERT INTO users (nome, login, password, tipo) values ('$nome', '$user', '$password', $typeUser );";
         $link = conecta();
+
         if($link !== NULL){
             $result = mysqli_query($link, $query);
 
@@ -74,6 +78,7 @@
     }
 
     function removeUser($id){
+
         $query = "DELETE FROM users WHERE id = '$id'";
         $link = conecta();
 
@@ -86,6 +91,7 @@
     }
 
     function listUsers(){
+
         $list = [];
         $query = "SELECT id, login, nome, tipo FROM users ";
         $link = conecta();
@@ -109,9 +115,12 @@
         }
         return $list;
     }
+
     function editUser($id, $nome, $password, $tipo){
+
         $query = "UPDATE users SET nome = '$nome', password = '$password', tipo = '$tipo' WHERE id = '$id'";
         $link = conecta();
+
         if($link !== NULL){
             $result = mysqli_query($link, $query);
             return $result;
