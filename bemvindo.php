@@ -27,6 +27,7 @@
         <ul>
             <li> <a href="./">Home</a></li>
             <li> <a href="./cadastraUser.php">Cadastra</a></li>
+            <li> <a href="./listagem.php">Lista de Usuários</a></li>
         </ul>
     </header>
     <main>

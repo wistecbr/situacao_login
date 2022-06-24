@@ -65,7 +65,7 @@
             $result = mysqli_query($link, $query);
             if($result){
                 while ($row = mysqli_fetch_row($result)){
-                    $carro = array(
+                    $users = array(
                     'id' => (INT) $row[0], 'login' => $row[1], 'nome' => $row[2]
                     );
                     array_push($lista, $users);
