@@ -34,4 +34,21 @@
                 return 0;
         }
     }
+
+    if(isset($_GET) && isset($_GET['deletar'])){ // Com a função GET que vem la do js 
+        // se obtém o id que é passado como parâmetro e salva dentro da variável id
+
+        $id = (INT) $_GET['deletar'];
+        $remove = removeUser($id);
+
+        if($remove === NULL){
+            header('Location: ../listar.php?erro=connection'); 
+
+        }else if($remove === false){
+            header('Location: ../listar.php?erro=query');
+
+        }else {
+            header('Location: ../listar.php'); 
+        }
+    }
 ?>
