@@ -1,8 +1,15 @@
 <?php
-$user = '';
-if (isset($_GET) && isset($_GET['username'])) {
-    $user = $_GET['username'];
-}
+
+    $user = '';
+    $id = 0;
+    if (isset($_GET) && isset($_GET['username'])) {
+        $user = $_GET['username'];
+    }
+
+    if( isset($_GET['id'])){
+        $id = (INT) $_GET['id'];
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -25,14 +32,17 @@ if (isset($_GET) && isset($_GET['username'])) {
         </figure>
         <ul>
             <li> <a href="./">Home</a></li>
+            <li> <a href="./cadastraUser.php">Cadastra</a></li>
         </ul>
     </header>
     <main>
         <?php
-            if ($user !== '') {
-                echo '<h1> Bem-Vindo </h1>';
-                echo '<h2>' . $user . '</h2>';
-            }
+
+        if ($user !== '') {
+            echo '<h1> Bem-Vindo </h1>';
+            echo '<h2>'.$id . '-' . $user.'</h2>';
+        }
+
         ?>
 
     </main>

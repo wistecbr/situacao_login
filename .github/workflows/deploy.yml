@@ -1,6 +1,7 @@
 name: 🚀 Deploy website on push
 
 on: 
+
   pull_request:
     branches:
       - develop
@@ -40,8 +41,6 @@ jobs:
           else 
             echo "::set-output name=name::${GITHUB_HEAD_REF}"
           fi
-
-
       - name: Set local dir
         id: set_local_dir
         env:
@@ -60,3 +59,4 @@ jobs:
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_pass }}
           server-dir: ${{ steps.set_local_dir.outputs.name }}
+

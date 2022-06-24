@@ -1,8 +1,12 @@
 <?php
-$msgErr = '';
-if (isset($_GET) && isset($_GET['error'])) {
-    $msgErr = $_GET['error'];
-}
+
+    include './lib/validate.php';
+        $msgErr='';
+
+    if (isset($_GET) && isset($_GET['error'])) {
+        $msgErr = $_GET['error'];
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -28,10 +32,10 @@ if (isset($_GET) && isset($_GET['error'])) {
         </ul>
     </header>
     <main>
-        <form action="./lib/valida.php" method="post" enctype="multipart/form-data">
+        <form action="./lib/validate.php" method="post" enctype="multipart/form-data">
             <p>
-                <label> Login: </label>
-                <input name="login" type="text" id="box_login">
+                <label> Username: </label>
+                <input name="username" type="text" id="box_login">
             </p>
 
             <p>
@@ -41,14 +45,14 @@ if (isset($_GET) && isset($_GET['error'])) {
 
             <?php
 
-            if ($msgErr !== '') {
-                echo '<p>';
-                echo '<label> Erro login/senha ' . $msgErr . '</label>';
-                echo '</p>';
-            }
+                if ($msgErr !== '') {
+                    echo '<p>';
+                    echo '<label> Erro login/senha ' . $msgErr . '</label>';
+                    echo '</p>';
+                }
             ?>
             <p>
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="Login" action= "./cadastraUser.php">
                 <input type="button" value="Cancelar" onclick="bt_cancelar()">
             </p>
 
