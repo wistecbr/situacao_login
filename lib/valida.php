@@ -25,4 +25,32 @@
                 return 0;
         }
     }
+
+    if(isset($_GET) && isset($_GET['remover'])){
+        $id = (INT) $_GET['remover'];
+        $resposta = removeUser($id);
+        if($resposta === NULL){
+            header('Location: ../listagem.php?erro=connection');
+        }else if($resposta === false){
+            header('Location: ../listagem.php?erro=query');
+        }else {
+            header('Location: ../listagem.php');
+        }
+    }
+
+    if(isset($_GET) && isset($_GET['editar'])){
+        $id = (INT) $_GET['editar'];
+        $resposta = buscaUser($id);
+        if($resposta === NULL){
+            header('Location: ../listagem.php?erro=connection');
+        }else if($resposta === false){
+            header('Location: ../listagem.php?erro=query');
+        }else{
+            var_dump($resposta);
+            $id = $resposta['id'];
+            $login = $resposta['login'];
+            $nome = $resposta['nome'];
+            header('Location: ../editar.php?id='.$id. '&login='.$login. '&nome='.$nome);
+        }
+    }
 ?>
