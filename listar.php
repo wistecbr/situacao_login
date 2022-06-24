@@ -38,8 +38,9 @@
                     echo '<td>'. $lista_Users[$i]['login'] .'</td>';
                     echo '<td>'. $lista_Users[$i]['tipo'] .'</td>';
                     echo '<td>
-                            <button onclick="deletar('.$lista_Users[$i]['id'].')"> Deletar </button>
+                            <button onclick="removeUser('.$lista_Users[$i]['id'].')"> Deletar </button>
                             <button onclick="editar('.$lista_Users[$i]['id'].')"> Editar </button>
+                            
                         </td>';
 
                     echo '</tr>';
