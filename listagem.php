@@ -31,7 +31,7 @@
                 for($i = 0; $i < count($users); $i++){
                     if(($i%2) !== 0 ){
                         echo '<tr class="cor_nao">';
-                    }else {
+                    }else{
                         echo '<tr>';
                     }
                         echo '<td>'. $users[$i]['id'] .'</td>';

@@ -42,7 +42,7 @@
                 </select>
             </p>
             <p>
-                <input type="submit" value="Cadastrar" >
+                <input type="submit" value="Cadastrar">
                 <input type="button" value="Cancelar" onclick="bt_cancelar()">
             </p>
         </form>

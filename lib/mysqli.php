@@ -59,14 +59,16 @@
     }
     function listarUser(){
         $lista = [];
-        $query = "SELECT id, login, nome FROM users WHERE login = '$user' and password = '$password'";
+        $query = 'SELECT id, login, nome FROM users;';
         $link = conecta();
         if($link !== NULL){
             $result = mysqli_query($link, $query);
             if($result){
                 while ($row = mysqli_fetch_row($result)){
                     $users = array(
-                    'id' => (INT) $row[0], 'login' => $row[1], 'nome' => $row[2]
+                    'id' => (INT) $row[0],
+                    'login' => $row[1],
+                    'nome' => $row[2]
                     );
                     array_push($lista, $users);
                 }
