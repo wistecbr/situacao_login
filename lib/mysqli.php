@@ -103,7 +103,7 @@
         }
         return $users;
     }
-    function  atulizaUser($id, $login, $nome){
+    function  atualizaUser($id, $login, $nome){
         $query = "UPDATE users SET id='" . $id ."' , login='".$login."' , nome=" .$nome.
         " WHERE id=".$id .";";
         $link = conecta();

@@ -25,6 +25,29 @@
                 return 0;
         }
     }
+    $resposta = cadastraCarro($modelo, $marca, $ano, $preco, $mysqlImg);
+            if($resposta === NULL){
+                header('Location: ../cadastro.php?erro=connection');
+            }else if($resposta === false){
+                header('Location: ../cadastro.php?erro=query');
+            }else {
+                header('Location: ../carros.php');
+            }
+        }else  if(isset($_POST) && isset($_POST['up_login'])
+        && isset($_POST['up_nome']) && isset($_POST['id'])){
+            $login = $_POST['up_login'];
+            $nome = $_POST['up_nome'];
+            $id = (INT) $_POST['id'];
+
+            $resposta = atualizaUser($id, $login, $nome);
+            if($resposta === NULL){
+                header('Location: ../editar.php?id='.$id. '&login='.$login. '&nome='.$nome);
+            }else if($resposta === false){
+                header('Location: ../editar.php?id='.$id. '&login='.$login. '&nome='.$nome);
+            }else{
+                header('Location: ../listagem.php');
+            }
+        }
 
     if(isset($_GET) && isset($_GET['remover'])){
         $id = (INT) $_GET['remover'];
