@@ -48,7 +48,6 @@
                     'login' => $row[1],
                     'nome' => $row[2]
                 );
-
             }
             $nome = $login['nome'];
             $id = $login['id'];
@@ -71,8 +70,55 @@
             }
         }else {
             header("Location: ../login.php?erro=banco");// if link is null redirect to login  
-    
         }
     }
-    
+
+    function removeUser($id){
+        $query = "DELETE FROM users WHERE id = '$id'";
+        $link = conecta();
+
+        if(link !== NULL){
+            $result = mysqli_query($link, $query);
+            return $result;
+        }else {
+            header("Location: ../index.php?erro=banco");
+        }
+    }
+
+    function listUsers(){
+        $list = [];
+        $query = "SELECT id, login, nome, tipo FROM users ";
+        $link = conecta();
+
+        if($link !== NULL){
+            $result = mysqli_query($link, $query);
+
+            if($result){
+
+                while($row = mysqli_fetch_row($result)){
+                    
+                    $lista_user = array(
+                        'id' => $row[0],
+                        'login' => $row[1],
+                        'nome' => $row[2],
+                        'tipo' => $row[3]
+                    );
+                    array_push($list, $lista_user);
+                }
+            }
+        }
+        return $list;
+    }
+    function editUser($id, $nome, $password, $tipo){
+        $query = "UPDATE users SET nome = '$nome', password = '$password', tipo = '$tipo' WHERE id = '$id'";
+        $link = conecta();
+        if($link !== NULL){
+            $result = mysqli_query($link, $query);
+            return $result;
+            
+        }else {
+            header("Location: ../index.php?erro=banco");
+        }
+
+    }
 ?>
