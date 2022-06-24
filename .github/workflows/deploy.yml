@@ -52,6 +52,9 @@ jobs:
           LOCAL_DIR: ${{steps.set_local_dir.outputs.name}}
         run: echo 'The branch name is'  $LOCAL_DIR
 
+      - name: Install dependeces
+        run: composer i
+
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
