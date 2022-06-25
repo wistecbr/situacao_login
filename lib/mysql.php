@@ -82,7 +82,7 @@
         $query = "DELETE FROM users WHERE id = '$id'";
         $link = conecta();
 
-        if(link !== NULL){
+        if($link !== NULL){
             $result = mysqli_query($link, $query);
             return $result;
         }else {
