@@ -25,55 +25,15 @@
                 return 0;
         }
     }
-    $resposta = cadastraCarro($modelo, $marca, $ano, $preco, $mysqlImg);
-            if($resposta === NULL){
-                header('Location: ../cadastro.php?erro=connection');
-            }else if($resposta === false){
-                header('Location: ../cadastro.php?erro=query');
-            }else {
-                header('Location: ../carros.php');
-            }
-        }else  if(isset($_POST) && isset($_POST['up_login'])
-        && isset($_POST['up_nome']) && isset($_POST['id'])){
-            $login = $_POST['up_login'];
-            $nome = $_POST['up_nome'];
-            $id = (INT) $_POST['id'];
-
-            $resposta = atualizaUser($id, $login, $nome);
-            if($resposta === NULL){
-                header('Location: ../editar.php?id='.$id. '&login='.$login. '&nome='.$nome);
-            }else if($resposta === false){
-                header('Location: ../editar.php?id='.$id. '&login='.$login. '&nome='.$nome);
-            }else{
-                header('Location: ../listagem.php');
-            }
-        }
-
-    if(isset($_GET) && isset($_GET['remover'])){
-        $id = (INT) $_GET['remover'];
-        $resposta = removeUser($id);
-        if($resposta === NULL){
-            header('Location: ../listagem.php?erro=connection');
-        }else if($resposta === false){
-            header('Location: ../listagem.php?erro=query');
+    if(isset($_GET) && isset($_GET['deletar'])){
+        $id = (INT) $_GET['deletar'];
+        $remove = removeUser($id);
+        if($remove === NULL){
+            header('Location: ../listar.php?erro=connection');
+        }else if($remove === false){
+            header('Location: ../listar.php?erro=query');
         }else {
-            header('Location: ../listagem.php');
-        }
-    }
-
-    if(isset($_GET) && isset($_GET['editar'])){
-        $id = (INT) $_GET['editar'];
-        $resposta = buscaUser($id);
-        if($resposta === NULL){
-            header('Location: ../listagem.php?erro=connection');
-        }else if($resposta === false){
-            header('Location: ../listagem.php?erro=query');
-        }else{
-            var_dump($resposta);
-            $id = $resposta['id'];
-            $login = $resposta['login'];
-            $nome = $resposta['nome'];
-            header('Location: ../editar.php?id='.$id. '&login='.$login. '&nome='.$nome);
+            header('Location: ../listar.php');
         }
     }
 ?>
