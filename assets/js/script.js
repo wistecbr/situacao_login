@@ -1,5 +1,5 @@
 function deletar(id){
-    var r = confirm("Confirmar remoção.");
+    let r = confirm("Confirmar remoção.");
 
     if(r=== true){
         window.location.assign('./lib/validate.php?deletar=' + id);
@@ -10,7 +10,7 @@ function deletar(id){
 }
 
 function editar(id){
-    var r = confirm("Confirmar remoção.");
+    let r = confirm("Confirmar remoção.");
 
     if(r=== true){
         window.location.assign('./lib/validate.php?editar=' + id);
