@@ -17,8 +17,8 @@
 <body>
     <header>
             <ul>
-                <li> <a href ="./">Home</a></li>
-
+                <li> <a href ="./"> Home </a></li>
+                <li> <a href ="./login.php"> Login </a> </li>
             </ul>
             
     </header>

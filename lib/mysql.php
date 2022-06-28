@@ -130,4 +130,29 @@
         }
 
     }
+
+    function found_user($id){
+
+        $query = 'SELECT id, nome, password, tipo FROM users WHERE id =' .$id . ' LIMIT 1;';
+        $link = conecta();
+
+        if($link !== NULL){
+            $result = mysqli_query($link, $query);
+
+            if($result){
+
+                while ($row = mysqli_fetch_row($result)) {
+                  
+                   $lista = array(
+                       'id' => (INT) $row[0],
+                        'nome' => $row[1], 
+                        'password' => $row[2],
+                        'tipo' => $row[3]
+                
+                    );
+                }
+            }
+        }
+        return $lista;
+    }
 ?>
