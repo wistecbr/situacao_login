@@ -1,9 +1,5 @@
 <?php
-include './lib/utils.php';
-    $login = verificaSessao();
-    if($login !== 1){
-        header('Location: ./acessorestrito.php');
-    }
+    $login = 0;
 ?>
 
 
@@ -31,8 +27,8 @@ include './lib/utils.php';
         </figure>
         <ul>
             <li> <a href="./">Home</a></li>
-            <li><a href="./carros.php">Lista de carros</a></li>
-            <li><a href="./cadastro.php">Cadastrar Carro</a></li>
+            <li> <a href="./cadastraUser.php">Cadastrar Usuário</a></li>
+            <li> <a href="./listaUsers.php">Lista Usuários</a></li>
         </ul>
     </header>
     <main>
@@ -43,7 +39,7 @@ include './lib/utils.php';
             </p>
             <p>
                 <label> login: </label>
-                <select id="box_login" name="login">
+                <input id="box_login" name="login" type="text">
             </p>
             <p>
                 <label> Senha: </label>
@@ -52,9 +48,9 @@ include './lib/utils.php';
             <p>
                 <label> Marca: </label>
                 <select id="box_tipo" name="tipo">
-                    <option value="">Administrador</option>
-                    <option value="">Cliente</option>
-                    <option value="">Funcionário</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Cliente</option>
+                    <option value="3">Funcionário</option>
                 </select>
             </p>
             <p>

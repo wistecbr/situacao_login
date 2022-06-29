@@ -1,7 +1,6 @@
 <?php
-include './lib/utils.php';
-$login = verificaSessao();
 
+$login = 0;
 $user = '';
 if($login !== 0){
     $user = $_SESSION['login']['nome'];
@@ -38,6 +37,7 @@ if (isset($_GET) && isset($_GET['username'])) {
         <ul>
             <li> <a href="./">Home</a></li>
             <li> <a href="./cadastraUser.php">Cadastrar Usuário</a></li>
+            <li> <a href="./listaUsers.php">Lista Usuários</a></li>
         </ul>
     </header>
     <main>

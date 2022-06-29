@@ -1,6 +1,4 @@
 <?php
-include './lib/utils.php';
-$login = verificaSessao();
 
 $user = '';
 if($login !== 0){

@@ -24,26 +24,3 @@ table {
     border: 1px solid black;
 }
 
-tr {
-    display: flex;
-    justify-content: space-between;
-}
-
-tr th{
-    margin-left: 15px;
-    padding: 5px 5px;
-    font-weight: bold;
-}
-
-td{
-    margin-left: 15px;
-    padding: 5px 5px;
-}
-
-form{
-    margin: 15px 35px;
-}
-
-form p {
-    margin-top: 15px;
-}

@@ -1,7 +1,5 @@
 <?php
-include './lib/utils.php';
-$login = verificaSessao();
-
+$login = 0;
 $msgErr = '';
 if (isset($_GET) && isset($_GET['error'])) {
     $msgErr = $_GET['error'];
