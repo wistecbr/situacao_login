@@ -122,3 +122,26 @@ Vamos adicionar `Session` para verificar que um usuário esta logado ou não.
 E permita o acesso a páginas de cadastro, lista de usuários, editar e excluir apenas para os usuários do `tipo 1`, que são os Administradores do sistema.
 
 Na branch `wisley` desse projeto vocês encontrarão exemplo de como implementar `session`
+
+# Parte 5
+
+Adicione mais uma funcionalidade em seu projeto
+Cadastro de `Marcas` de carro
+a tabela deverá conter as seguites colunas 
+* 1) *id:* chave primária, inteiro, AUTO_INCREMENT
+* 2) *nome:* varchar(50)
+
+Adicione também uma página de listar, editar e excluir
+
+# Parte 6
+
+Adicione outra funcionalidade em seu projeto
+Cadastro de `Carros`
+
+a tabela deverá conter as seguites colunas 
+* 1) *id:* chave primária, inteiro, AUTO_INCREMENT
+* 2) *nome:* varchar(50), NOT NULL
+* 3) *marcaId:* inteiro (Referente a tabela `Marcas`)
+* 4) *ano*: inteiro, NOT NULL
+* 5) *valor*: float, NOT NULL
+* 6) *vendido*: boolean, NOT NULL
