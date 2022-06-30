@@ -131,7 +131,8 @@ a tabela deverá conter as seguites colunas
 * 1) *id:* chave primária, inteiro, AUTO_INCREMENT
 * 2) *nome:* varchar(50)
 
-Adicione também uma página de listar, editar e excluir
+Adicione também as páginas de listar, editar e excluir
+Cujo o listar deverá conter as opções de editar e excluir
 
 # Parte 6
 
@@ -145,3 +146,6 @@ a tabela deverá conter as seguites colunas
 * 4) *ano*: inteiro, NOT NULL
 * 5) *valor*: float, NOT NULL
 * 6) *vendido*: boolean, NOT NULL
+
+Adicione também as páginas de listar, editar e excluir
+Cujo o listar deverá conter as opções de editar e excluir
