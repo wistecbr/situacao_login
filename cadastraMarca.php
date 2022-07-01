@@ -29,6 +29,8 @@
             <li> <a href="./">Home</a></li>
             <li> <a href="./cadastraUser.php">Cadastrar Usuário</a></li>
             <li> <a href="./listaUsers.php">Lista Usuários</a></li>
+            <li> <a href="./cadastraMarca.php">Cadastrar Marca</a></li>
+            <li> <a href="./listaMarcas.php">Lista Marcas</a></li>
         </ul>
     </header>
     <main>
