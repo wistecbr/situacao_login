@@ -38,5 +38,10 @@
         deletePeloId($tabela, $id);
     }
 
+    if(isset($_POST) && isset($_POST['nomeMarca'])){
+        $marca = htmlspecialchars($_POST['nomeMarca']);
+        cadastraMarca($marca);
+    }
+
 
 ?>

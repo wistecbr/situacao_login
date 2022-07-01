@@ -29,31 +29,13 @@
             <li> <a href="./">Home</a></li>
             <li> <a href="./cadastraUser.php">Cadastrar Usuário</a></li>
             <li> <a href="./listaUsers.php">Lista Usuários</a></li>
-            <li> <a href="./cadastraMarca.php">Cadastrar Marca</a></li>
-            <li> <a href="./listaMarcas.php">Lista Marcas</a></li>
         </ul>
     </header>
     <main>
         <form action="./lib/valida.php" method="post" enctype="multipart/form-data">
             <p>
                 <label> Nome: </label>
-                <input name="nome" type="text" id="box_nome">
-            </p>
-            <p>
-                <label> login: </label>
-                <input id="box_login" name="login" type="text">
-            </p>
-            <p>
-                <label> Senha: </label>
-                <input name="password" type="password" id="box_password">
-            </p>
-            <p>
-                <label> Marca: </label>
-                <select id="box_tipo" name="tipo">
-                    <option value="1">Administrador</option>
-                    <option value="2">Cliente</option>
-                    <option value="3">Funcionário</option>
-                </select>
+                <input name="nomeMarca" type="text" id="box_nome">
             </p>
             <p>
                 <input type="submit" value="Cadastrar">
