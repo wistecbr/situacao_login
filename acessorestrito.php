@@ -1,8 +1,8 @@
 <?php
-
+session_start();
 $user = '';
 if($login !== 0){
-    $user = $_SESSION['login']['nome'];
+    $user = $_SESSION['user']['nome'];
 }
 
 if (isset($_GET) && isset($_GET['username'])) {

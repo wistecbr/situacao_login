@@ -1,9 +1,13 @@
 <?php
-
+var_dump(session_status());
+if(!$_SESSION){
+    session_start();
+}
+var_dump($_SESSION);
 $login = 0;
 $user = '';
 if($login !== 0){
-    $user = $_SESSION['login']['nome'];
+    $user = $_SESSION['user']['nome'];
 }
 
 if (isset($_GET) && isset($_GET['username'])) {

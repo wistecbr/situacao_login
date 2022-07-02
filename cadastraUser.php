@@ -1,5 +1,15 @@
 <?php
+    session_start();
+    var_dump($_SESSION);
     $login = 0;
+    if($_SESSION && $_SESSION['user']){
+        $login = 1;
+       // /*
+        if($_SESSION['user']['tipo'] !== 1){
+            header("Location: ./acessorestrito.php");
+        }
+        //*/
+    }
 ?>
 
 
@@ -34,7 +44,7 @@
         </ul>
     </header>
     <main>
-        <form action="./lib/valida.php" method="post" enctype="multipart/form-data">
+        <form action="./lib/valida.php?cadastra=user" method="post" enctype="multipart/form-data">
             <p>
                 <label> Nome: </label>
                 <input name="nome" type="text" id="box_nome">

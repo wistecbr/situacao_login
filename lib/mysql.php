@@ -43,9 +43,13 @@ function verificaLogin($login, $password)
                     'id' => $row[0],
                     'login' => $row[1],
                     'nome' => $row[2],
-                    'tipo' => $row[3]
+                    'tipo' => (int)$row[3]
                 );
             }
+            if(!$_SESSION){
+                session_start();
+            }
+            $_SESSION['user'] = $usuario;
             $username = $usuario['nome'];
             header("Location: ../bemvindo.php?username=$username");
         }
@@ -75,7 +79,7 @@ function listarUsers()
                     'id' => $row[0],
                     'nome' => $row[1],
                     'login' => $row[2],
-                    'tipo' => $row[3],
+                    'tipo' => (int) $row[3],
                 );
                 // em seguida adicionamos o novo objeto na lista (vetor) de usuarios
                 array_push($users, $user);
@@ -100,7 +104,7 @@ function cadastrarUser($nome, $user, $password, $typeUser)
         $result = mysqli_query($link, $query);
 
         if ($result) {
-            header("Location: ../login.php"); //redirect to login page if login exist
+            header("Location: ../listaUsers.php"); //redirect to login page if login exist
         } else {
             header("Location: ../cadastraUser.php?erro=query"); // redirect to cadastra if login don't exist
         }

@@ -34,7 +34,7 @@
         </ul>
     </header>
     <main>
-        <form action="./lib/valida.php" method="post" enctype="multipart/form-data">
+        <form action="./lib/valida.php?cadastra=marca" method="post" enctype="multipart/form-data">
             <p>
                 <label> Nome: </label>
                 <input name="nomeMarca" type="text" id="box_nome">
