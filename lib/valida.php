@@ -29,11 +29,35 @@
         $id = (INT) $_GET['deletar'];
         $remove = removeUser($id);
         if($remove === NULL){
-            header('Location: ../listar.php?erro=connection');
+            header('Location: ../listagem.php?erro=connection');
+
         }else if($remove === false){
-            header('Location: ../listar.php?erro=query');
+            header('Location: ../listagem.php?erro=query');
+
         }else {
-            header('Location: ../listar.php');
+            header('Location: ../listagem.php');
         }
+    }
+    if(isset($_GET) && isset($_GET['editar'])){
+        $id = (INT) $_GET['editar'];
+        $search_user = found_user($id);
+        if($search_user === NULL){
+            header('Location: ../listagem.php?erro=connection');
+        }else if($search_user === false){
+            header('Location: ../listagem.php?erro=query');
+        }else{
+            $id = $resposta['id'];
+            $password = $resposta['modelo'];
+            $marca = $resposta['marca'];
+            $ano = $resposta['ano'];
+            $preco = $resposta['preco'];
+            header('Location: ../editar.php?id='.$id. '&modelo='.$modelo. '&ano='.$ano.'&preco='.$preco . '&marca='.$marca);
+        }
+    if(isset($_POST['nome']) && isset($_POST['username']) && isset($_POST['password']) && isset ($_POST['tipo'])){
+        $name = htmlspecialchars($_POST['nome']);
+        $username = htmlspecialchars($_POST['username']);
+        $password = md5(htmlspecialchars($_POST['password']));
+        $typeUser = convertCharToInt($_POST['tipo']);
+        cadastrarUser($name, $username, $password,$typeUser);
     }
 ?>

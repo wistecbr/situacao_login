@@ -76,5 +76,55 @@
         }
         return $lista;
     }
+    function editUser($id, $nome, $login, $tipo){
+        $link = conecta();
+        $query = "UPDATE users SET nome='$nome', login='login', tipo='$tipo' WHERE id='$id'";
 
+        if($link !== NULL){
+            $result = mysqli_query($link, $query);
+            if($result){
+                header('Location: ../listagem.php');
+            }else{
+                header("Location: ../editUser.php?id=$id&erro");
+            }
+        }
+    }
+    function cadastraMarca($marca){
+        $link = conecta();
+        $query = "INSERT INTO marcas (nome) values('$marca');";
+
+        if($link !== NULL){
+            $result = mysqli_query($link, $query);
+            if($result){
+                header("Location: ../listaMarcas.php");
+            }else {
+                header("Location: ../cadastraMarca.php?erro=query");
+            }
+        }else {
+            header("Location: ../cadastraMarca.php?erro=Banco");
+        }
+    }
+    function listarMarcas() {
+        $link = conecta();
+        $query = "SELECT id, nome FROM marcas;";
+
+        if($link !== NULL){
+            $result = mysqli_query($link, $query);
+            if(mysqli_num_rows($result)>=0){
+                $lista = [];
+                while($row = mysqli_fetch_row($result)){
+                    $marca = array(
+                    'id' => $row[0],
+                    'nome' => $row[1],
+                    );
+                    array_push($lista,$marca);
+                }
+                return $lista;
+            }else{
+                header("Location: ../cadastraMarca.php?erro=query");
+            }
+            }else{
+                header("Location: ../listaMarcas.php?erro=Banco");
+            }
+        }
 ?>

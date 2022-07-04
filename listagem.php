@@ -38,8 +38,8 @@
                         echo '<td>'. $users[$i]['login'] .'</td>';
                         echo '<td>'. $users[$i]['nome'] .'</td>';
                         echo '<td>
-                            <button onclick="deletar('.$users[$i]['id'].')">Deletar</button>
-                            <button onclick="editar('.$users[$i]['id'].')">Editar</button>
+                        <button onclick="deletar('.$users[$i]['id'].')"> Deletar </button>
+                        <button onclick="editar('.$users[$i]['id'].')"> Editar </button>
                         </td>';
                     echo '</tr>';
                 }
