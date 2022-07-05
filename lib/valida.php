@@ -1,12 +1,13 @@
 <?php
     include 'mysqli.php';
     session_start();
-    
-    if(isset($_POST['username']) && isset($_POST['password'])){
-        $user = htmlspecialchars($_POST['username']);
-        $password = md5(htmlspecialchars($_POST['password']));
-        login($user, $password);
+
+    if(isset($_POST) && isset($_POST['login']) && isset($_POST['password']) ){
+       $login = htmlspecialchars($_POST['login']);
+       $password = md5(htmlspecialchars($_POST['password']));
+       Login($login, $password);
     }
+
     if(isset($_POST['nome']) && isset($_POST['username']) && isset($_POST['password']) && isset ($_POST['tipo'])){
         $name = htmlspecialchars($_POST['nome']);
         $username = htmlspecialchars($_POST['username']);
