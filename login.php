@@ -1,3 +1,7 @@
+<?php
+    include './lib/valida.php';
+        $msgErr='';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
