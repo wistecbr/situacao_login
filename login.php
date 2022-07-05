@@ -1,12 +1,3 @@
-<?php
-    session_start();
-    var_dump($_SESSION);
-    $login = 0;
-    $msgErr = '';
-    if (isset($_GET) && isset($_GET['error'])) {
-        $msgErr = $_GET['error'];
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
