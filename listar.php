@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./assets/js/script.js" defer></script>
 
-    <title>Listar Cadastrados</title>
+    <title> Listar Cadastrados </title>
 </head>
 <body>
     <header>
@@ -25,10 +25,10 @@
     <main>
     <table>
             <tr>
-                <th>Nome</th>
-                <th>Login</th>
-                <th>Tipo</th>
-                <th>Opções</th>
+                <th> Nome </th>
+                <th> Login </th>
+                <th> Tipo </th>
+                <th> Opções </th>
             </tr>
 
             <?php
@@ -47,7 +47,6 @@
                 }
             ?>              
         </table>
-
     </main>
     <footer>
 

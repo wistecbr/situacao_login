@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/stilo.css">
     <script src="./assests/js/script.js" defer></script>
-    <title>Bem-Vindo</title>
+    <title> Bem-Vindo </title>
 </head>
 
 <body>
@@ -31,8 +31,8 @@
             <img src="" alt="logo">
         </figure>
         <ul>
-            <li> <a href="./">Home</a></li>
-            <li> <a href="./cadastraUser.php">Cadastra</a></li>
+            <li> <a href="./"> Home </a></li>
+            <li> <a href="./cadastraUser.php"> Cadastra </a></li>
         </ul>
     </header>
     <main>

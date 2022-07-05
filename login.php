@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/stilo.css">
     <script src="./assests/js/script.js" defer></script>
-    <title>Login</title>
+    <title> Login </title>
 </head>
 
 <body>
@@ -28,8 +28,8 @@
             <img src="" alt="logo">
         </figure>
         <ul>
-            <li> <a href ="./">Home</a></li>
-            <li><a href ="./listar.php"</a>listar Cadastrados</li>
+            <li> <a href ="./"> Home </a></li>
+            <li><a href ="./listar.php"</a> listar Cadastrados </li>
         </ul>
     </header>
     <main>

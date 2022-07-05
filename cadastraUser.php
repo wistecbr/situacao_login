@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./assests/css/reset.css">
     <link rel="stylesheet" href="./assests/css/stilo.css">
     <script src="./assests/js/script.js" defer></script>
-    <title>Cadastro User</title>
+    <title> Cadastro User </title>
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
             <img src="" alt="logo">
         </figure>
         <ul>
-            <li> <a href="./">Home</a></li>
+            <li> <a href="./"> Home </a></li>
             
         </ul>
     </header>
@@ -37,9 +37,9 @@
             <p>
                 <label> Função: </label>
                 <select name="tipo" id="box_tipo" >
-                    <option value="1">Administrador</option>
-                    <option value="2">Cliente</option>
-                    <option value="3">Funcionário</option>
+                    <option value="1"> Administrador </option>
+                    <option value="2"> Cliente </option>
+                    <option value="3"> Funcionário </option>
                 </select>
             </p>
             <p>
