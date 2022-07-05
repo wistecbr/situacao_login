@@ -97,10 +97,10 @@
             $result = mysqli_query($link, $query);
             if($result){
                 header("Location: ../listaMarcas.php");
-            }else {
+            }else{
                 header("Location: ../cadastraMarca.php?erro=query");
             }
-        }else {
+        }else{
             header("Location: ../cadastraMarca.php?erro=Banco");
         }
     }

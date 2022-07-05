@@ -8,4 +8,14 @@
     function exportaLista(){
         return $GLOBALS['lista'];
     }
+
+    $lista = [];
+    $marca = array('id' => '1', 'nome' => 'Fiat Strada');
+    array_push($lista, $marca);
+    $marca = array('id' => '2', 'nome' => 'Toyota Corolla Cross');
+    array_push($lista, $marca);
+
+    function exportaLista(){
+        return $GLOBALS['lista'];
+    }
 ?>
