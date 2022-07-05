@@ -1,7 +1,8 @@
 <?php
     include './lib/valida.php';
+        $login = 0;
         $msgErr='';
-    if (isset($_GET) && isset($_GET['error'])) {
+    if (isset($_GET) && isset($_GET['error'])){
         $msgErr = $_GET['error'];
     }
 ?>
