@@ -1,7 +1,9 @@
 <?php
-    include './lib/valida.php';
-        $msgErr='';
-    if (isset($_GET) && isset($_GET['error'])){
+    session_start();
+    var_dump($_SESSION);
+    $login = 0;
+    $msgErr = '';
+    if (isset($_GET) && isset($_GET['error'])) {
         $msgErr = $_GET['error'];
     }
 ?>
