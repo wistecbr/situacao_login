@@ -20,27 +20,33 @@
             return $mysqli;
         }
     }
-    function login($user,$password){
-        $query = "SELECT id, login, nome FROM users WHERE login = '$user' and password = '$password'";
+    function Login($login, $password)
+    {
         $link = conecta();
-        if($link !== NULL){
+        if ($link === NULL) {
+            header('Location: ../login.php?error= Acesso ao BD');
+        } else {
+            $query = "SELECT id, login, nome, tipo FROM users WHERE login='$login' and password='$password' LIMIT 1";
             $result = mysqli_query($link, $query);
-        }else {
-            header("Location: ../login.php?erro=banco");
-        }
-        if($result){
-            while($row = mysqli_fetch_row($result)){
-                $login = array(
-                    'id' => $row[0],
-                    'login' => $row[1],
-                    'nome' => $row[2]
-                );
+
+            if (mysqli_num_rows($result) < 1) {
+                header('Location: ../login.php?error= Usuário e/ou senha inválidos');
+            } else {
+                while ($row = mysqli_fetch_row($result)) {
+                    $usuario = array(
+                        'id' => $row[0],
+                        'login' => $row[1],
+                        'nome' => $row[2],
+                        'tipo' => (int)$row[3]
+                    );
+                }
+                if(!$_SESSION){
+                    session_start();
+                }
+                $_SESSION['user'] = $usuario;
+                $username = $usuario['nome'];
+                header("Location: ../bemvindo.php?username=$username");
             }
-            $nome = $login['nome'];
-            $id = $login['id'];
-            header("Location: ../bemvindo.php?username=$nome&id=$id");
-        }else{
-            header("Location: ../login.php?erro=query");
         }
     }
     function cadastrarUser($nome, $user, $password, $typeUser){
