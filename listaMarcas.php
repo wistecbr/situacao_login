@@ -33,6 +33,7 @@
                 <th> Nome </th>
                 <th> Opções </th>
             </tr>
+            <?php
             for ($i = 0; $i < count($marcas); $i++){
                 echo '<tr>';
                     echo '<td>'.$marcas[$i]['id'].'</td>';
