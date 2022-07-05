@@ -38,11 +38,11 @@
                     <input name="password" type="password" id="box_ano">
                 </p>
                 <?php
-                if ($msgErr !== ''){
+                    if ($msgErr !== ''){
                     echo '<p>';
-                    echo '<label> Erro login/senha ' . $msgErr . '</label>';
+                    echo '<label> Erro: ' . $msgErr . '</label>';
                     echo '</p>';
-                }
+                    }
                 ?>
                 <p>
                     <input type="submit" value="Login" action= "./cadastraUser.php">
