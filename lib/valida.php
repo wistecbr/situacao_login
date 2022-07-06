@@ -1,66 +1,41 @@
 <?php
-    include 'mysqli.php';
+    include 'mysql.php';
     session_start();
+    
+    if(isset($_POST['nome']) && isset($_POST['login']) && isset ($_POST['tipo'])){
+        $name = htmlspecialchars($_POST['nome']);
+        $login = htmlspecialchars($_POST['login']);
+        $typeUser = (int)($_POST['tipo']);
 
+        $id = (int)($_POST['id']);
+        editUser($id,$name,$login,$typeUser);
+    }
     if(isset($_POST) && isset($_POST['login']) && isset($_POST['password']) ){
-       $login = htmlspecialchars($_POST['login']);
-       $password = md5(htmlspecialchars($_POST['password']));
-       Login($login, $password);
-    }
-
-    if(isset($_POST['nome']) && isset($_POST['username']) && isset($_POST['password']) && isset ($_POST['tipo'])){
-        $name = htmlspecialchars($_POST['nome']);
-        $username = htmlspecialchars($_POST['username']);
+        $login = htmlspecialchars($_POST['login']);
         $password = md5(htmlspecialchars($_POST['password']));
-        $typeUser = convertCharToInt($_POST['tipo']);
-
-        cadastrarUser($name, $username, $password,$typeUser);
+        verificaLogin($login, $password);
     }
-    function convertCharToInt($typeChar){
-        switch ($typeChar){
-            case '1':
-                return 1;
-            case '2':
-                return 2;
-            case '3':
-                return 3;
-            default:
-                return 0;
+    if(isset($_GET) && isset($_GET['cadastra'])){
+        $cadastra = $_GET['cadastra'];
+        if($cadastra === 'marca' && isset($_POST) && isset($_POST['nomeMarca'])){
+            $marca = htmlspecialchars($_POST['nomeMarca']);
+            cadastraMarca($marca);
+        }
+        if($cadastra === 'user' && isset($_POST['nome']) && isset($_POST['login']) && isset($_POST['password']) && isset ($_POST['tipo'])){
+            $name = htmlspecialchars($_POST['nome']);
+            $username = htmlspecialchars($_POST['login']);
+            $password = md5(htmlspecialchars($_POST['password']));
+            $typeUser = (int)($_POST['tipo']);
+
+            cadastrarUser($name, $username, $password,$typeUser);
         }
     }
-    if(isset($_GET) && isset($_GET['deletar'])){
-        $id = (INT) $_GET['deletar'];
-        $remove = removeUser($id);
-        if($remove === NULL){
-            header('Location: ../listagem.php?erro=connection');
-
-        }else if($remove === false){
-            header('Location: ../listagem.php?erro=query');
-
-        }else {
-            header('Location: ../listagem.php');
-        }
+    if(isset($_GET) && isset($_GET['deletar']) && isset($_GET['id'])){
+        $id = (int) $_GET['id'];
+        $tabela = $_GET['deletar'];
+        deletePeloId($tabela, $id);
     }
-    if(isset($_GET) && isset($_GET['editar'])){
-        $id = (INT) $_GET['editar'];
-        $search_user = found_user($id);
-        if($search_user === NULL){
-            header('Location: ../listagem.php?erro=connection');
-        }else if($search_user === false){
-            header('Location: ../listagem.php?erro=query');
-        }else{
-            $id = $resposta['id'];
-            $password = $resposta['modelo'];
-            $marca = $resposta['marca'];
-            $ano = $resposta['ano'];
-            $preco = $resposta['preco'];
-            header('Location: ../editar.php?id='.$id. '&modelo='.$modelo. '&ano='.$ano.'&preco='.$preco . '&marca='.$marca);
-        }
-    if(isset($_POST['nome']) && isset($_POST['username']) && isset($_POST['password']) && isset ($_POST['tipo'])){
-        $name = htmlspecialchars($_POST['nome']);
-        $username = htmlspecialchars($_POST['username']);
-        $password = md5(htmlspecialchars($_POST['password']));
-        $typeUser = convertCharToInt($_POST['tipo']);
-        cadastrarUser($name, $username, $password,$typeUser);
-    }
-?>
+    if(isset($_GET) && isset($_GET['logout'])){
+        session_unset();
+        header("Location: ../");
+}

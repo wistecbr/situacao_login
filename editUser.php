@@ -1,51 +1,76 @@
+<?php
+include './lib/mysql.php';
+    $login = 0;
+    if(isset($_GET['id'])){
+        $id = (int) $_GET['id'];
+        $user = buscarUserId($id);
+    }else{
+        header('Location: ./bemvindo.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assests/css/reset.css">
-    <link rel="stylesheet" href="./assests/css/stilo.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/stilo.css">
     <script src="./assests/js/script.js" defer></script>
-    <title>Cadastro User</title>
+    <title>Editar Usuário</title>
 </head>
 <body>
     <header>
         <figure>
             <img src="" alt="logo">
+            <?php
+                if($login !== 0){
+                    echo '<a href="./lib/valida.php?logout">Logout</a>';
+                }
+            ?>
         </figure>
         <ul>
             <li> <a href="./">Home</a></li>
+            <li> <a href="./cadastraUser.php">Cadastrar Usuário</a></li>
+            <li> <a href="./listagem.php">Lista Usuários</a></li>
+            <li> <a href="./cadastraMarca.php">Cadastrar Marca</a></li>
+            <li> <a href="./listaMarcas.php">Lista Marcas</a></li>
         </ul>
     </header>
     <main>
-        <form action="./lib/valida.php" method="post" enctype="multipart/form-data">
+        <form action="./lib/valida.php?editar" method="post" enctype="multipart/form-data">
             <p>
-                <label> ID: </label>
-                <input type="text" name="id" id="box_id"<?php echo 'value = "100"' ?> disabled>
+                <input name="id" type="text" id="box_nome" style="display: none;" <?php echo 'value ="'. $id .'"' ?>>
             </p>
             <p>
                 <label> Nome: </label>
-                <input name="nome" type="text" id="box_nome">
+                <input name="nome" type="text" id="box_nome" <?php echo 'value ="'.$user['nome'].'"' ?> >
             </p>
             <p>
-                <label> Username: </label>
-                <input name="username" id="box_login" type="text">
+                <label> login: </label>
+                <input id="box_login" name="login" type="text" <?php echo 'value ="'.$user['login'].'"' ?>>
             </p>
             <p>
-                <label> Senha: </label>
-                <input name="password" type="password" id="box_password">
-            </p>
-            <p>
-                <label> Função: </label>
-                <select name="tipo" id="box_tipo" >
-                    <option value="1">Administrador</option>
-                    <option value="2">Cliente</option>
-                    <option value="3">Funcionário</option>
+                <label> Tipo: </label>
+                <select id="box_tipo" name="tipo" >
+                    <?php
+                        $lista = [
+                            array('value' => 1, 'nome' => 'Administrador'),
+                            array('value' => 2, 'nome' => 'Cliente'),
+                            array('value' => 3, 'nome' => 'Funcionário')];
+                        for($i =0; $i < count($lista); $i++){
+                            if($lista[$i]['value'] === $user['tipo']){
+                                echo '<option value="'.$lista[$i]['value']. '" selected>'.$lista[$i]['nome'].'</option>';
+                            }else{
+                                echo '<option value="'.$lista[$i]['value']. '">'.$lista[$i]['nome'].'</option>';
+                            }
+                        }
+                    ?>
                 </select>
             </p>
             <p>
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="Editar">
                 <input type="button" value="Cancelar" onclick="bt_cancelar()">
             </p>
         </form>

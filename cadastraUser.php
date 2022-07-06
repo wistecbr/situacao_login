@@ -1,3 +1,15 @@
+<?php
+    session_start();
+    var_dump($_SESSION);
+    $login = 0;
+    if($_SESSION && $_SESSION['user']){
+        $login = 1;
+        if($_SESSION['user']['tipo'] !== 1){
+            header("Location: ./acessorestrito.php");
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,35 +19,43 @@
     <link rel="stylesheet" href="./assests/css/reset.css">
     <link rel="stylesheet" href="./assests/css/stilo.css">
     <script src="./assests/js/script.js" defer></script>
-    <title>Cadastro User</title>
+    <title>Cadastrar Carro</title>
 </head>
 <body>
     <header>
         <figure>
             <img src="" alt="logo">
+            <?php
+                if($login !== 0){
+                    echo '<a href="./lib/valida.php?logout">Logout</a>';
+                }
+            ?>
         </figure>
         <ul>
             <li> <a href="./">Home</a></li>
+            <li> <a href="./cadastraUser.php">Cadastrar Usuário</a></li>
+            <li> <a href="./listaUsers.php">Lista Usuários</a></li>
+            <li> <a href="./cadastraMarca.php">Cadastrar Marca</a></li>
+            <li> <a href="./listaMarcas.php">Lista Marcas</a></li>
         </ul>
     </header>
     <main>
-        <form action="./lib/valida.php" method="post" enctype="multipart/form-data">
+        <form action="./lib/valida.php?cadastra=user" method="post" enctype="multipart/form-data">
             <p>
-
                 <label> Nome: </label>
                 <input name="nome" type="text" id="box_nome">
             </p>
             <p>
-                <label> Username: </label>
-                <input name="username" id="box_login" type="text">
+                <label> login: </label>
+                <input id="box_login" name="login" type="text">
             </p>
             <p>
                 <label> Senha: </label>
                 <input name="password" type="password" id="box_password">
             </p>
             <p>
-                <label> Função: </label>
-                <select name="tipo" id="box_tipo" >
+                <label> Marca: </label>
+                <select id="box_tipo" name="tipo">
                     <option value="1">Administrador</option>
                     <option value="2">Cliente</option>
                     <option value="3">Funcionário</option>

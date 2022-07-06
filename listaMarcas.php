@@ -4,6 +4,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <script src="./assets/js/utils.js" defer></script>
     <title>Lista </title>
 </head>
+
 <body>
     <header>
         <figure>
@@ -34,7 +36,7 @@
                 <th> Opções </th>
             </tr>
             <?php
-            for ($i = 0; $i < count($marcas); $i++){
+            for ($i = 0; $i < count($marcas); $i++) {
                 echo '<tr>';
                     echo '<td>'.$marcas[$i]['id'].'</td>';
                     echo '<td>'.$marcas[$i]['nome'].'</td>';

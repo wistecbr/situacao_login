@@ -1,19 +1,14 @@
-function deletar(id){
-    let r = confirm("Tem certeza que deseja deletar essa linha?");
-
-    if(r === true){
-        window.location.assign('./lib/valida.php?deletar=' + id);
+const detelarUser = (id) => {
+    const result = confirm(`Deseja mesmo exluir o usuário de id: ${id}`)
+    if(result){
+        window.location.assign(`./lib/valida.php?deletar=users&id=${id}`);
     }
-
-    return;
-}
-
-function editar(id){
-    let r = confirm("Tem certeza que deseja editar essa linha?");
-
-    if(r === true){
-        window.location.assign('./lib/valida.php?editar=' + id);
+    return
+} 
+const editarUser = (id) => {
+    const result = confirm(`Deseja mesmo editar o usuário de id: ${id}`)
+    if(result){
+        window.location.assign(`./editUser.php?id=${id}`);
     }
-
-    return;
+    return
 }
