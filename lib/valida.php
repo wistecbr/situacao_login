@@ -1,7 +1,7 @@
 <?php
-    include 'mysql.php';
+    include 'mysqli.php';
     session_start();
-    
+
     if(isset($_POST['nome']) && isset($_POST['login']) && isset ($_POST['tipo'])){
         $name = htmlspecialchars($_POST['nome']);
         $login = htmlspecialchars($_POST['login']);
